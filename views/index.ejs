@@ -1,0 +1,14 @@
+<% if(!locals.user){ %>
+<div class="hreo-unit">
+    <h1>blog of beforeload</h1>
+    <p>A blog based on Node.js made by beforeload.</p>
+    <p>
+        <a href="/login" class="btn btn-primary btn-large">login</a>
+        <a href="/reg" class="btn btn-large">Register Now</a>
+    </p>
+</div>
+<% include posts %>
+<% } else { %>
+    <% include say %>
+<% } %>
+
