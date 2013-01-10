@@ -1,25 +1,21 @@
 /*
  * GET home page.
  */
-var crypto = require('crypto'),
-    User = require('../models/user.js'),
-	Post = require('../models/post.js')
+var 
+/* delete
+	crypto = require('crypto'),
+	User = require('../models/user.js'),
+	Post = require('../models/post.js'),
+*/
+	site = require('./controllers/site.js'),
+	comments = require('./controllers/comments.js')
 module.exports = function(app){
-    app.get('/', function(req,res){
-        Post.get(null, function(err, posts){
-            if(err){
-                posts = []
-            } 
-            res.render('index',{
-                title:'home',
-                user: req.session.user,
-                posts:posts,
-                success:req.flash('success').toString(),
-                layout:'layout'
-            })
-        })
-    })
+    app.get('/', site.index)
 
+    app.post('/post', checkLogin)
+    app.post('/post', comments.comment)	
+
+	/*
     app.get('/reg', checkNotLogin)
     app.get('/reg', function(req,res){
         res.render('reg',{
@@ -110,22 +106,8 @@ module.exports = function(app){
     })
 
 
-    app.post('/post', checkLogin)
-    app.post('/post', function(req, res){
-        var currentUser = req.session.user,
-            post = new Post(currentUser.name, req.body.post)
-        post.save(function(err){
-            if(err){
-                req.flash('error', err) 
-                return res.redirect('/')
-            } 
 
-            req.flash('success', '发布成功!')
-            res.redirect('/u/' + currentUser.name)
-        })
-    })
 
-    app.get('/u/:user',checkLogin)
     app.get('/u/:user', function(req,res){
         User.get(req.params.user, function(err, user){
             if(!user){
@@ -148,6 +130,7 @@ module.exports = function(app){
             })
         })
     })
+*/
 }
 
 

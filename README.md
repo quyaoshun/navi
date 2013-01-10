@@ -1,3 +1,2 @@
-mongod --dbpath="~/data/"
-
-cd microblog && node app.js
+mongodb start
+cd beforeload && node app.js
