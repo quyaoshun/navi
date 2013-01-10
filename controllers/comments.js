@@ -1,7 +1,7 @@
-var User = require('../models/user.js'),
-	Post = require('../models/post.js')
+var User = require('../models/user.js')
 exports.comment = function(req, res, next){
-	var currentUser = req.session.user,
+	var currentUser = req.session.user
+		/*
 		post = new Post(currentUser.name, req.body.post)
 	post.save(function(err){
 		if(err){
@@ -12,5 +12,6 @@ exports.comment = function(req, res, next){
 		req.flash('success', 'success!')
 		res.redirect('/u/' + currentUser.name)
 	})
+*/
 	next()
 }

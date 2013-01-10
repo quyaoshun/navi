@@ -1,14 +1,15 @@
 {
-  "name": "mblog",
+  "name": "application-name",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node app"
   },
   "dependencies": {
-    "express": "3.0.2",
-    "ejs": ">= 0.0.1",
-    "connect-mongo": ">=0.1.7",
+    "express": "3.0.4",
+	"express-partials":"*",
+    "ejs": "*",
+	"connect-mongo": ">=0.1.7",
     "mongodb":">=0.9.9"
   },
   "scripts":{
