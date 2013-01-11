@@ -1,63 +1,36 @@
-var mongodb = require('./db');
+var mongoose = require('mongoose'),
+	db = require('./db'),
 
-function User(user){
-    this.name = user.name;
-    this.password = user.password;
-};
-module.exports = User;
+	Schema = mongoose.Schema,
+	UserSchema = new Schema({
+		name: String,
+		password: String
+	})
 
-User.prototype.save = function save(callback) {
-    var user = {
-        name: this.name,
-        password: this.password,
-    };
+	db.model('User',UserSchema)
 
-    mongodb.open(function(err, db){
-        if(err){
-            return callback(err);
-        } 
+	var User = db.model('User')
 
-        db.collection('users', function(err, collection){
-            if(err){
-                mongodb.close();
-                return callback(err);
-            }
-
-            collection.ensureIndex('name',{
-                unique:true
-            });
-
-            collection.insert(user,{safe: true}, function(err, user){
-                mongodb.close();
-                callback(err, user);
-            });
-        });
-    });
-};
-
-User.get = function get(username, callback){
-    mongodb.open(function(err, db){
-        if(err){
-            return callback(err);
-        }
-
-        db.collection('users', function(err, collection){
-            if(err){
-                mongodb.close();
-                return callback(err);
-            }
-
-            collection.findOne({
-                name: username
-            },function(err, doc){
-                mongodb.close();
-                if(doc){
-                    var user = new User(doc);
-                    callback(err, user);
-                } else {
-                    callback(err, null);
-                }
-            });
-        });
-    });
-};
+exports.user = {
+	save: function(user,callback){
+			var newUser = new User()
+				newUser.name = user.name
+				newUser.password = user.password
+				newUser.save(function(err){
+					if(err){
+						return callback(err)
+					}
+					callback(null)
+				})
+		  },
+	find: function(username,callback){
+			User.findOne({
+				name: username
+			},function(err, doc){
+				if(err){
+					return callback(err,null)
+				}
+				callback(null, doc)
+			})
+		  }
+}
