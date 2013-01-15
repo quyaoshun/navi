@@ -10,15 +10,17 @@ var site = require('./controllers/site'),
         app.get('/', site.index)
 
         app.get('/reg', check.account.notlogged)
-        app.get('/reg', user.account.regInit)
+        app.get('/reg', user.reg.get)
 		app.get('/login', check.account.notlogged)
-		app.get('/login', user.account.loginInit)
+		app.get('/login', user.login.get)
 
+		app.get('/init', user.init)
+		app.get('/users', user.find)
 		
         app.post('/reg', check.account.notlogged)
-        app.post('/reg', user.account.regPost)
+        app.post('/reg', user.reg.post)
 		app.post('/login', check.account.notlogged)
-		app.post('/login', user.account.loginPost)
+		app.post('/login', user.login.post)
 
         app.get('/new', check.account.logged)
         app.get('/new', blog.create.init)

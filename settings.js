@@ -1,5 +1,5 @@
 module.exports = {
     cookieSecret: 'beforeload',
-    db:'beforeload',
-    host:'localhost',
+    db:'userdemo',
+    host:'localhost'
 };

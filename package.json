@@ -6,9 +6,8 @@
         "express": "3.0.4",
         "express-partials": "*",
         "ejs": "*",
-        "mongoose": "*",
-		"connect-flash":"*",
-		"connect-mongo":"*"
+		"mongodb":"*",
+        "mongoose": "*"
     },
     "scripts": {
         "start": "node app"
