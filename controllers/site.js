@@ -4,5 +4,5 @@ exports.index = function(req,res){
 		title:'home',
 		layout:'layout'
 	})
-	console.log('index page')
+	console.log(req.session)
 }
