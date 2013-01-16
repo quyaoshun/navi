@@ -1,0 +1,50 @@
+<!-- inner BEGIN -->
+	<div class="inner ">
+      <div class="block_works_7 three_columns">
+        <ul>
+          <li>
+            <div>
+              <a href="http://venus.dp/" class="lnk_thumb" title="可视化Venus"><img src="/images/product.png" alt="" /></a>
+              <a href="http://venus.dp/" class="details"><span>可视化Venus</span></a>
+            </div>
+            <img src="/images/pic_shadow.png" class="shadow" alt="" />
+          </li>
+          <li>
+            <div>
+              <a href="http://venus.dp:8080/" class="lnk_thumb" title="Chrome插件"><img src="/images/product1.png" alt="" /></a>
+              <a href="http://venus.dp:8080/" class="details"><span>Chrome插件</span></a>
+            </div>
+            <img src="/images/pic_shadow.png" class="shadow" alt="" />
+          </li>
+          <li>
+            <div>
+              <a href="http://lint.fb.dp" class="lnk_thumb" title="Lint（在线代码检查工具）"><img src="/images/product2.png" alt="" /></a>
+              <a href="http://lint.fb.dp" class="details"><span>Lint（在线代码检查工具）</span></a>
+            </div>
+            <img src="/images/pic_shadow.png" class="shadow" alt="" />
+          </li>
+          <li>
+            <div>
+              <a href="http://orion.fb.dp" class="lnk_thumb" title="猎户座标签图"><img src="/images/product4.png" alt="" /></a>
+              <a href="http://orion.fb.dp" class="details"><span>猎户座标签图</span></a>
+            </div>
+            <img src="/images/pic_shadow.png" class="shadow" alt="" />
+          </li>
+        </ul> 
+        <div class="clearboth"></div>
+    </div>
+
+<!-- inner END -->
+
+<script type="text/javascript">
+  jQuery(function () {
+    jQuery('.lnk_thumb').parent().hover(
+      function() {
+        jQuery(this).find('.details').stop(true).animate({height : 65}, 200);
+      },
+      function() {
+        jQuery(this).find('.details').stop(true).animate({height : 0}, 200);
+      }
+    );
+  });
+</script>

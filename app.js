@@ -10,7 +10,7 @@ var express = require('express'),
 	partials = require('express-partials'),
 	settings = require('./settings'),
 	app = express()
-
+app.engine('html', require('ejs').renderFile)
 app.configure(function(){
   app.set('port', process.env.PORT || 3000)
   app.set('views', __dirname + '/views')
