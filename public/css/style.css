@@ -32,8 +32,7 @@ a:hover {text-decoration:underline;}
 .block_slogan {width:400px; margin-left:41px; padding-top:36px; float:left;}
 .block_slogan p {color:#666;text-transform:uppercase; line-height:normal;text-shadow:#FFF 0px 1px 0px;font-size: 20px;font-family: Helvetica, Arial, "Liberation Sans", sans-serif;}
 #content {position:relative; z-index:1;}
-.inner {padding:42px 0px 42px;}
-.block_works_7 {margin-left:-20px;}
+.block_works_7 {margin-left:-20px;padding:42px 0px 42px;}
 .block_works_7 li {margin-left:20px; margin-bottom:20px; float:left; display:block;}
 .block_works_7 li span {display:inline-block; position:relative;}
 .block_works_7 li a {display:block; overflow:hidden; position:relative; z-index:2;}
