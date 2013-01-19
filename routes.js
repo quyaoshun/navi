@@ -3,8 +3,7 @@
  */
 var site = require('./controllers/site'),
     check = require('./controllers/check'),
-    user = require('./controllers/user'),
-    blog = require('./controllers/blog')
+    user = require('./controllers/user')
 
     module.exports = function (app) {
         app.get('/', site.index)
@@ -22,11 +21,5 @@ var site = require('./controllers/site'),
         app.post('/reg', user.reg.post)
 		app.post('/login', check.account.notlogged)
 		app.post('/login', user.login.post)
-
-        app.get('/new', check.account.logged)
-        app.get('/new', blog.create.init)
-
-        app.post('/new', check.account.notlogged)
-        app.post('/new', blog.create.publish)
     }
 
