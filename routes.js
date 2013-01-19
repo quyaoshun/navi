@@ -8,7 +8,7 @@ var site = require('./controllers/site'),
 
     module.exports = function (app) {
         app.get('/', site.index)
-        app.get('/navigator', site.nav)
+        app.get('/navi', site.navi)
 		app.get('/list', site.list)
         app.get('/reg', check.account.notlogged)
         app.get('/reg', user.reg.get)

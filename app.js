@@ -1,13 +1,11 @@
 /**
  * Module dependencies.
  */
-
 var express = require('express'),
 	routes = require('./routes'),
 	http = require('http'),
 	path = require('path'),
 	partials = require('express-partials'),
-	settings = require('./settings'),
 	app = express()
 app.engine('html', require('ejs').renderFile)
 app.configure(function(){
@@ -22,9 +20,6 @@ app.configure(function(){
   app.use(express.cookieParser())
   app.use(app.router)
   app.use(express.static(path.join(__dirname, 'public')))
-  app.use(express.session({
-	secret: settings.cookieSecret
-  }))
 })
 
 app.configure('development', function(){

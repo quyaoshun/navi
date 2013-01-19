@@ -1,12 +1,9 @@
 module.exports = {
     index: function(req, res) {
-        res.render('index.html', {
-            title: 'home',
-            layout: 'layout'
-        })
+		return res.redirect('/navi')
     },
-    nav: function(req, res) {
-        res.render('navigator.html', {
+    navi: function(req, res) {
+        res.render('navi.html', {
             title: '商务前端导航页面',
             layout:'layout'
         })
