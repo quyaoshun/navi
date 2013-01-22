@@ -13,7 +13,7 @@ var site = require('./controllers/site'),
         app.get('/reg', user.reg.get)
 		app.get('/login', check.account.notlogged)
 		app.get('/login', user.login.get)
-
+		app.get('/logout', user.logout)
 		app.get('/init', user.init)
 		app.get('/users', user.find)
 		

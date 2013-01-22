@@ -53,12 +53,28 @@ module.exports = {
     login:{
 		get: function (req, res) {
 			res.render('login.html', {
-				title: '用户登录'
+				title: '用户登录',
+				user: req.session.user
 			})
 		},
 		post: function(req, res){
-			return res.redirect('/')
+			var md5 = crypto.createHash('md5'),
+				password = md5.update(req.body.password).digest('base64')
+			User.find(req.body.username, function(err,user){
+				if(!user){
+					return res.redirect('/login')	
+				}
+				if(user.password !== password){
+					return res.redirect('/login')	
+				}
+				req.session.user = user
+				res.redirect('/')
+			})
 		}
+	},
+	logout:function(req,res){
+		req.session.user = null
+		res.redirect('/')
 	},
 	init: function(req, res){
 		User.save(initUser, function(err){

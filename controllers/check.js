@@ -4,7 +4,6 @@ exports.account = {
            // req.flash('error', 'Î´µÇÂ¼')
             return res.redirect('/login')
         }
-		console.log(req.session)
         next()
     },
     notlogged: function (req, res, next) {
@@ -12,7 +11,6 @@ exports.account = {
          //   req.flash('error', 'ÒÑµÇÂ¼')
             return res.redirect('/')
         }
-		console.log(req.session)
         next()
     }
 }
