@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-	db.require('./db'),
+	db = require('./db'),
 	Schema = mongoose.Schema,
 	ShowSchema = new Schema({
 		userName:{
