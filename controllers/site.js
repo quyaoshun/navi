@@ -13,11 +13,9 @@ module.exports = {
 		post: function(req, res){
 			var show = {
 					user: req.session.user,
-					pic: req.body.picture,
-					desc: req.body.description,
-					url: req.body.url
+					picture: req.body.picture,
+					desc: req.body.desc
 				}
-			
 		}
 	},	
 	list: function(req, res){
