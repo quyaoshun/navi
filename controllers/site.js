@@ -17,15 +17,22 @@ module.exports = {
 			})
 		})
     },
-	show:{
+	shows:{
 		post: function(req, res){
 			var show = {
 				user: req.session.user,
 				picture: req.body.picture,
-				desc: req.body.desc
+				desc: req.body.description
 			}
+			console.log(show)
+		},
+		get: function(req, res){
+			res.render('shows.html',{
+				title:'picture upload',
+				layout:'layout'
+			})
 		}
-	},	
+	},
 	list: function(req, res){
 		res.render('list.html',{
 			title:'list',
