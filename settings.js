@@ -1,5 +1,7 @@
+var path = require('path')
 module.exports = {
-    cookieSecret: 'beforeload',
-    db:'userdemo',
-    host:'localhost'
-};
+    cookieSecret: 'navi',
+    db:'shows',
+    host:'localhost',
+	uploadDir: path.join(__dirname,'public','tmp')
+}

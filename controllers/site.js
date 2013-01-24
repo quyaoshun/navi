@@ -1,4 +1,5 @@
-var Show = require('../models/show')
+var Show = require('../models/show'),
+	fs = require('fs')
 module.exports = {
     index: function(req, res) {
 		return res.redirect('/navi')
@@ -18,13 +19,30 @@ module.exports = {
 		})
     },
 	shows:{
-		post: function(req, res){
+		post: function(req, res,next){
+			var tmpPath = req.files.picture.path
+				targetPath = './public/images/'+ req.files.picture.name.toLocaleLowerCase() + Date.now()
+			fs.rename(tmpPath, targetPath, function(err){
+				if(err){
+					throw err
+				}
+				fs.unlink(tmpPath,function(){
+					if(err){
+						throw err
+					}
+				})
+			})
 			var show = {
 				user: req.session.user,
-				picture: req.body.picture,
+				picture: targetPath,
 				desc: req.body.description
 			}
-			console.log(show)
+			Show.save(show,function(err){
+				if(err){
+					return res.redirect('/shows')
+				}
+				res.redirect('/')
+			})
 		},
 		get: function(req, res){
 			res.render('shows.html',{

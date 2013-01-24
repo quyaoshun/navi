@@ -6,6 +6,7 @@ var express = require('express'),
 	http = require('http'),
 	path = require('path'),
 	partials = require('express-partials'),
+	settings = require('./settings'),
 	app = express()
 app.engine('html', require('ejs').renderFile)
 app.configure(function(){
@@ -15,11 +16,13 @@ app.configure(function(){
   app.use(partials())
   app.use(express.favicon())
   app.use(express.logger('dev'))
-  app.use(express.bodyParser())
+  app.use(express.bodyParser({
+		uploadDir: settings.uploadDir 
+  }))
   app.use(express.methodOverride())
   app.use(express.cookieParser())
   app.use(express.session({
-	secret:'navi'
+	secret: settings.cookieSecret
   }))
   app.use(app.router)
   app.use(express.static(path.join(__dirname, 'public')))
