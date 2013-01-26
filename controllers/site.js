@@ -9,8 +9,7 @@ module.exports = {
 			if(err){
 				shows = []	
 			}
-			console.log('shows:'+shows)
-			console.log('req.session'+req.session)
+			console.log(shows)
 			res.render('navi.html', {
 				title: '商务前端导航页面',
 				user: req.session.user,

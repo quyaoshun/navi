@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
 	db = require('./db'),
 	Schema = mongoose.Schema,
 	ShowSchema = new Schema({
-		userName:{
+		username:{
 			type:String,
 			index:true
 		},
@@ -26,11 +26,11 @@ function Shows(username,picture,desc,time){
 }
 
 module.exports = {
-	save: function(shows,callback){
+	save: function(show,callback){
 		var newShow= new Show()
-		newShow.username = shows.user.name
-		newShow.picture = shows.picture
-		newShow.desc = shows.desc
+		newShow.username = show.user.name
+		newShow.picture = show.picture
+		newShow.desc = show.desc
 		newShow.save(function(err){
 			if(err){
 				return callback(err)
