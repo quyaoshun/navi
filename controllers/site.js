@@ -9,7 +9,8 @@ module.exports = {
 			if(err){
 				shows = []	
 			}
-			console.log(req.session)
+			console.log('shows:'+shows)
+			console.log('req.session'+req.session)
 			res.render('navi.html', {
 				title: '商务前端导航页面',
 				user: req.session.user,
@@ -21,7 +22,7 @@ module.exports = {
 	shows:{
 		post: function(req, res,next){
 			var tmpPath = req.files.picture.path
-				targetPath = './public/images/'+ req.files.picture.name.toLocaleLowerCase() + Date.now()
+				targetPath = './public/images/' + Date.now() + req.files.picture.name.toLocaleLowerCase() 
 			fs.rename(tmpPath, targetPath, function(err){
 				if(err){
 					throw err
