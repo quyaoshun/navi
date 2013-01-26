@@ -33,8 +33,8 @@
 			<% shows.forEach(function(show, index){ %>
 			<li>
 				<div>
-				  <a href="http://orion.fb.dp" class="lnk_thumb" title="<%= show.desc %>"><img src="<%= show.picture %>" alt="" /></a>
-				  <a href="http://orion.fb.dp" class="details"><span><%= show.desc %></span></a>
+					<a href="<%= show.url %>" class="lnk_thumb" title="<%= show.desc %>"><img src="<%= show.picture %>" alt="" /></a>
+					<a href="<%= show.url %>" class="details"><span><%= show.desc %></span></a>
 				</div>
 				<img src="/images/pic_shadow.png" class="shadow" alt="" />
 			</li>

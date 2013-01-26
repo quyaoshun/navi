@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 			type:String,
 			index:true
 		},
+		url: String,
 		picture: String,
 		desc: String,
 		time: {
@@ -18,8 +19,9 @@ db.model('Show',ShowSchema)
 
 var Show = db.model('Show')
 
-function Shows(username,picture,desc,time){
+function Shows(username,url,picture,desc,time){
 	this.username = username
+	this.url = url
 	this.picture= picture 
 	this.desc = desc
 	this.time = time
@@ -29,8 +31,10 @@ module.exports = {
 	save: function(show,callback){
 		var newShow= new Show()
 		newShow.username = show.user.name
+		newShow.url = show.url
 		newShow.picture = show.picture
 		newShow.desc = show.desc
+		console.log(newShow)
 		newShow.save(function(err){
 			if(err){
 				return callback(err)
@@ -45,7 +49,7 @@ module.exports = {
 			}
 			var shows = []
 			docs.forEach(function(doc){
-				var show = new Shows(doc.username,doc.picture,doc.desc,doc.time)
+				var show = new Shows(doc.username,doc.url,doc.picture,doc.desc,doc.time)
 				shows.push(show)
 			})
 			callback(null,shows)
@@ -58,7 +62,7 @@ module.exports = {
 			}
 			var shows=[]
 			docs.forEach(function(doc){
-				var show=new Shows(doc.userName,doc.post,doc.time)
+				var show = new Shows(doc.username,doc.url,doc.picture,doc.desc,doc.time)
 				shows.push(show)
 			})
 			callback(null,shows)

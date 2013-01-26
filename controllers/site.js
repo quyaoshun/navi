@@ -35,6 +35,7 @@ module.exports = {
 			})
 			var show = {
 				user: req.session.user,
+				url: req.body.producturl,
 				picture: fileUrl,
 				desc: req.body.description
 			}
