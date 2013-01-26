@@ -7,7 +7,7 @@ module.exports = {
     navi: function(req, res) {
 		Show.allShowsFind(function(err,shows){
 			if(err){
-				shows = []	
+				shows = []
 			}
 			console.log(shows)
 			res.render('navi.html', {
@@ -20,8 +20,9 @@ module.exports = {
     },
 	shows:{
 		post: function(req, res,next){
-			var tmpPath = req.files.picture.path
-				targetPath = './public/images/' + Date.now() + req.files.picture.name.toLocaleLowerCase() 
+			var tmpPath = req.files.picture.path,
+				fileUrl = '/images/' + Date.now() + req.files.picture.name.toLocaleLowerCase(),
+				targetPath = './public' + fileUrl
 			fs.rename(tmpPath, targetPath, function(err){
 				if(err){
 					throw err
@@ -34,7 +35,7 @@ module.exports = {
 			})
 			var show = {
 				user: req.session.user,
-				picture: targetPath,
+				picture: fileUrl,
 				desc: req.body.description
 			}
 			Show.save(show,function(err){

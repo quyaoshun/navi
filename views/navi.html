@@ -30,12 +30,15 @@
             </div>
             <img src="/images/pic_shadow.png" class="shadow" alt="" />
           </li>
-          <li>
-            <div>
-              <a href="http://orion.fb.dp" class="dd-add-newlink" title="加新的标签"><img src="/images/product4.png" alt="" /></a>
-            </div>
-            <img src="/images/pic_shadow.png" class="shadow" alt="" />
-          </li>
+			<% shows.forEach(function(show, index){ %>
+			<li>
+				<div>
+				  <a href="http://orion.fb.dp" class="lnk_thumb" title="<%= show.desc %>"><img src="<%= show.picture %>" alt="" /></a>
+				  <a href="http://orion.fb.dp" class="details"><span><%= show.desc %></span></a>
+				</div>
+				<img src="/images/pic_shadow.png" class="shadow" alt="" />
+			</li>
+			<% }) %>
         </ul> 
         <div class="clearboth"></div>
     </div>
