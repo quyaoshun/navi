@@ -6,6 +6,7 @@ var express = require('express'),
 	http = require('http'),
 	path = require('path'),
 	partials = require('express-partials'),
+	markdown = require('markdown-js'),
 	settings = require('./settings'),
 	app = express()
 app.engine('html', require('ejs').renderFile)
