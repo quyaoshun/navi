@@ -1,5 +1,6 @@
 var Show = require('../models/show'),
-	fs = require('fs')
+	fs = require('fs'),
+	markdown = require('markdown')
 module.exports = {
     index: function(req, res) {
 		return res.redirect('/navi')
@@ -58,5 +59,11 @@ module.exports = {
 			title:'list',
 			layout:false
 		})
+	},
+
+	markdown: function(req, res){
+		var html = markdown.toHTML("[test](http://www.iteye.com/)")
+		res.send(html)
+		res.end()
 	}
 }

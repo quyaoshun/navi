@@ -4,7 +4,6 @@
 var site = require('./controllers/site'),
     check = require('./controllers/check'),
     user = require('./controllers/user')
-
     module.exports = function (app) {
         app.get('/', site.index)
         app.get('/navi', site.navi)
@@ -25,5 +24,7 @@ var site = require('./controllers/site'),
 		app.post('/login', user.login.post)
 		app.post('/shows', check.account.unlogged)
 		app.post('/shows', site.shows.post)
+
+		app.get('/markdown', site.markdown)
     }
 
