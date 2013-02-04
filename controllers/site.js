@@ -1,6 +1,6 @@
 var Show = require('../models/show'),
 	fs = require('fs'),
-	markdown = require('markdown')
+	markdown = require('markdown').markdown
 module.exports = {
     index: function(req, res) {
 		return res.redirect('/navi')
@@ -61,9 +61,9 @@ module.exports = {
 		})
 	},
 
-	markdown: function(req, res){
-		var html = markdown.toHTML("[test](http://www.iteye.com/)")
-		res.send(html)
-		res.end()
+	markdown: function(req, res, next){
+		res.render('blogs/demo.md',{
+			layout:false
+		})
 	}
 }

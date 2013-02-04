@@ -5,6 +5,8 @@ var express = require('express'),
 	routes = require('./routes'),
 	http = require('http'),
 	path = require('path'),
+	fs = require('fs'),
+	markdown = require('markdown').markdown,
 	partials = require('express-partials'),
 	settings = require('./settings'),
 	app = express()
@@ -28,6 +30,15 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')))
 })
 
+app.engine('md', function(path, options, fn){
+	fs.readFile(path, 'utf8', function(err,str){
+		if(err){
+			return fn(err)
+		}
+		str = markdown.toHTML(str)
+		fn(null,str)
+	})
+})
 app.configure('development', function(){
   app.use(express.errorHandler())
 })

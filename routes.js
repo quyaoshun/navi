@@ -3,7 +3,8 @@
  */
 var site = require('./controllers/site'),
     check = require('./controllers/check'),
-    user = require('./controllers/user')
+    user = require('./controllers/user'),
+	blogs = require('./controllers/blogs')
     module.exports = function (app) {
         app.get('/', site.index)
         app.get('/navi', site.navi)
@@ -26,5 +27,6 @@ var site = require('./controllers/site'),
 		app.post('/shows', site.shows.post)
 
 		app.get('/markdown', site.markdown)
+		app.get('/blogs/:title.html', blogs.get)
     }
 
