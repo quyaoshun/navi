@@ -19,7 +19,7 @@ app.configure(function(){
   app.use(express.favicon())
   app.use(express.logger('dev'))
   app.use(express.bodyParser({
-		uploadDir: settings.uploadDir 
+	uploadDir: settings.uploadDir 
   }))
   app.use(express.methodOverride())
   app.use(express.cookieParser())
