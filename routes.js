@@ -23,7 +23,6 @@ var site = require('./controllers/site'),
         app.post('/reg', user.reg.post)
 		app.post('/login', check.account.logged)
 		app.post('/login', user.login.post)
-		app.post('/shows', check.account.unlogged)
 		app.post('/shows', site.shows.post)
 
 		app.get('/markdown', site.markdown)

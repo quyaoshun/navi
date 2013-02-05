@@ -12,6 +12,7 @@ module.exports = {
 				next()
 			}else{
 				res.render(urlPath,{
+					title: 'demo.md',
 					layout:false
 				})
 			}

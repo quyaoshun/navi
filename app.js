@@ -22,10 +22,12 @@ app.configure(function(){
 	uploadDir: settings.uploadDir 
   }))
   app.use(express.methodOverride())
-  app.use(express.cookieParser())
+  app.use(express.cookieParser('beforeload'))
+  app.use(express.cookieSession())
   app.use(express.session({
 	secret: settings.cookieSecret
   }))
+
   app.use(app.router)
   app.use(express.static(path.join(__dirname, 'public')))
 })
