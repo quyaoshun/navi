@@ -3,7 +3,7 @@ var Show = require('../models/show'),
 	markdown = require('markdown').markdown
 module.exports = {
     index: function(req, res) {
-		return res.redirect('/navi')
+		return res.redirect('/list')
     },
     navi: function(req, res) {
 		Show.allShowsFind(function(err,shows){

@@ -27,6 +27,7 @@ var site = require('./controllers/site'),
 		app.post('/shows', site.shows.post)
 
 		app.get('/markdown', site.markdown)
-		app.get('/blogs/:title.html', blogs.get)
+		app.get('/blog/:title', blogs.getContent)
+		app.get('/blog',blogs.getList)
     }
 

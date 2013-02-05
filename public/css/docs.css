@@ -12,7 +12,6 @@
 
 body {
   position: relative;
-  padding-top: 60px;
 }
 
 /* Code in headings */
@@ -54,7 +53,7 @@ body > .navbar .brand:hover {
 
 /* padding for in-page bookmarks and fixed navbar */
 section {
-  padding-top: 30px;
+  /*padding-top: 30px;*/
 }
 section > .page-header,
 section > .lead {
@@ -581,7 +580,7 @@ h2 + .row {
 
 /* Echo out a label for the example */
 .bs-docs-example:after {
-  content: "Example";
+  content: "Content";
   position: absolute;
   top: -1px;
   left: -1px;
