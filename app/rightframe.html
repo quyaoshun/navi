@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script>
+var flag=2;
+function shift_status(){
+	if(flag==2){
+		flag=1;
+		window.parent._contentContent.cols="*,7,0";
+		frameshow2.src="images/p-left.png";
+		frameshow2.alt="隐藏图片管理"
+	}
+	else{
+		flag=2;
+		frameshow2.src="images/p-right.png";
+		frameshow2.alt="显示图片管理"
+		window.parent._contentContent.cols="*,7,170";
+		}
+}
+
+</script>
+</head>
+<body onclick="shift_status()"  text="#000000" leftmargin="0" topmargin="0" bgcolor="#2da4dc">
+<table border=0 height="100%" cellspacing="0" cellpadding="0">
+ <tr>
+    <td valign="middle" bgcolor="#2da4dc" id=menuSwitch style="cursor:pointer;"><img src="images/p-right.png"  width=7 height="39" id=frameshow2></td>
+ </tr>
+</table>
+
+</body>
+</html>

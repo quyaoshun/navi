@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+var ttt
+ttt=2;
+function oa_tool1(){
+if(ttt==2)
+{
+ttt=1;
+window.parent._center.rows="*,7,0";
+frameshow1.src="images/p-top.png";
+frameshow1.alt="隐藏图片管理"
+}
+else
+{
+ttt=2;
+frameshow1.src="images/p-bottom.png";
+frameshow1.alt="显示图片管理"
+window.parent._center.rows="*,7,101";
+}
+}
+</script>
+</head>
+<body text="#000000" leftmargin="0" topmargin="0" bgcolor="#2da4dc">
+<div onClick="oa_tool1()" align="center" style="cursor:pointer;"><img id=frameshow1 src="images/p-bottom.png" width="50" height="9" alt="显示图片管理"></div>
+</body>
+</html>

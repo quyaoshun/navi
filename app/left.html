@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>左导航</title>
+<link rel="stylesheet" type="text/css"  href="css/reset.css" />
+<link rel="stylesheet" type="text/css"  href="css/global.css" />
+<link rel="stylesheet" type="text/css"  href="css/main.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/chili-1.7.pack.js"></script>
+<script type="text/javascript" src="js/jquery.easing.js"></script>
+<script type="text/javascript" src="js/jquery.dimensions.js"></script>
+<script type="text/javascript" src="js/jquery.accordion.js"></script>
+<script language="javascript">
+	jQuery().ready(function(){
+		jQuery('#navigation').accordion({
+			header: '.head',
+			navigation1: true, 
+			event: 'click',
+			fillSpace: true,
+			animated: 'slide',
+			heightstyle:'fill'
+		});
+		$(window).resize(function(){
+			document.location.reload();
+		});
+	});
+</script>
+</head>
+
+<body ng-app>
+  <ul id="navigation">
+    <li> <a class="head">组织结构管理</a>
+      <ul>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>添加日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/修改日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>添加日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/修改日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>添加日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/修改日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>添加日志</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/修改日志</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">知识库</a>
+      <ul>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>添加分类</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/删除分类</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">案例总结</a>
+      <ul>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/删除留言</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/删除评论</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">视频会议</a>
+      <ul>
+        <li><a href="javascript:void(0);" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>添加友情链接</a></li>
+        <li><a href="javascript:;" target="rightFrame"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>查看/修改友情</a></li>
+      </ul>
+    </li>
+    <li> <a class="head">考试</a>
+      <ul>
+        <li><a href="javascript:;" target="_blank"><i><img src="images/menu/images/advise.gif" width="32" height="32" /></i>身份验证</a></li>
+      </ul>
+    </li>
+  </ul>
+</body>
+</html>

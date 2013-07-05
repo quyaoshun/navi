@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>存折账户余额</title>
+<link rel="stylesheet" type="text/css"  href="css/reset.css" />
+<link rel="stylesheet" type="text/css"  href="css/global.css" />
+<link rel="stylesheet" type="text/css"  href="css/main.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+    <!--Tab切换效果-->
+	<script type="text/javascript">
+    $(document).ready(function(){	
+        var $blocks = $('.main-con div.main-contab');
+        $('.main-tit ul li').click(function(){
+            $(this).addClass('focus').siblings().removeClass('focus');
+            $($blocks.get($(this).index())).removeClass('hide').siblings().addClass('hide');
+        });
+	})
+</script>
+</head>
+
+<body>
+<div class="main">
+	<div class="main-tit">
+    	<ul>
+        	<li class="focus">存折账户余额</li>
+        </ul>
+    </div>
+    <div class="main-con">
+    	<div class="main-contab">
+        	<form action="" method="get">
+            <div class="cx">账户：<input name="" type="text" class="input148" />&nbsp;<input name="" type="button" class="btn-two-blue" value="查询" /></div>
+			<table width="96%" border="0" class="mainTab1">
+              <tr>
+                <th width="19%" class="th-bor1">账户</th>
+                <th width="19%" class="th-bor1">币种</th>
+                <th width="19%" class="th-bor1">科目</th>
+                <th width="19%" class="th-bor1">余额</th>
+                <th width="20%">账户名称</th>
+              </tr>
+              <tr>
+                <td>666258878****9936</td>
+                <td>123</td>
+                <td>123</td>
+                <td>231</td>
+                <td>2365</td>
+              </tr>
+            </table>
+			</form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript"> 
+	//已选中项计总数
+	var sltedItemCnt = 0;
+	//奇偶行变色
+	altRow(1, "itemListTab", "odd", "even");
+	altRow(1, "itemListTab2", "odd", "even");
+	//鼠标划过行时变色
+	hoverRow(1, "itemListTab", "over");
+	hoverRow(1, "itemListTab2", "over");
+	//鼠标划过表头时变色
+	//hoverTabHeader("itemListTab", "tbTitOver");
+	//添加底部分页导航
+	//$("#pagerTop").html($("#pagerBtm").html());
+	//添加单击行事件
+	initRowClick(0);
+	//初始化表头排序功能和显示当前排序字段
+	//setOrderSign("[InputTime] DESC");
+</script>
