@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>中间区域</title>
+<link href="bower_components/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="bower_components/bootstrap/css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+  <div> 
+  <ul class="nav nav-tabs">
+    <li class="dropdown">
+      <a class="dropdown-toggle"
+        data-toggle="dropdown"
+        href="javascript:void(0)">
+        管理报表
+        <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <!-- links -->
+        <li><a href="#j-chart1">单列报表</a></li>
+        <li><a href="#j-chart2">区域报表</a></li>
+        <li><a href="#j-chart3">集团报表</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">运营报表<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#j-chart11">单列报表</a></li>
+        <li><a href="#j-chart12">区域报表</a></li>
+        <li><a href="#j-chart13">集团报表</a></li>
+      </ul>
+    </li>
+  
+    <li><a href="#">监控报表</a></li>
+  </ul>
+
+  <h3><center>区域卫生巡检</center></h3>
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label" for="input-process">店名</label>
+      <div class="controls">
+        <select>
+          <option>店名1234</option>
+          <option>店名5678</option>
+          <option>店名9101</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="input-point1">时间段</label>
+      <div class="controls">
+        <input type="text" id="input-point1" placeholder="起始时间"> 至
+        <input type="text" id="input-point1" placeholder="终止时间">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="input-point">指标</label>
+      <div class="controls">
+        <input type="text" id="input-point" placeholder="指标">
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">查询</button>
+      </div>
+    </div>
+  </form>
+<script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
