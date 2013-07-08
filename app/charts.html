@@ -19,44 +19,61 @@
       </a>
       <ul class="dropdown-menu">
         <!-- links -->
-        <li><a href="#j-chart1">Chart1</a></li>
-        <li><a href="#j-chart2">Chart2</a></li>
-        <li><a href="#j-chart3">Chart3</a></li>
-        <li><a href="#j-chart4">Chart4</a></li>
+        <li><a href="#j-chart1">前台各项服务测试达标率</a></li>
         <li class="divider"></li>
-        <li><a href="#j-chart5">Chart5</a></li>
-        <li><a href="#j-chart6">Chart6</a></li>
+        <li><a href="#j-chart2">本月所查客房各类别达标率</a></li>
+        <li><a href="#j-chart3">本月所查客房各区域达标率</a></li>
+        <li><a href="#j-chart4">本月所查各客房达标率</a></li>
+        <li><a href="#j-chart5">本月所查客房各区域达标率</a></li>
+        <li><a href="#j-chart6">本月所查各客房达标率</a></li>
       </ul>
     </li>
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#">运营报表<b class="caret"></b></a>
       <ul class="dropdown-menu">
-        <li><a href="#j-chart7">Chart7</a></li>
-        <li><a href="#j-chart9">Chart9</a></li>
-        <li><a href="#j-chart10">Chart10</a></li>
+        <li><a href="#j-chart7">本月所查客房各类别达标率</a></li>
+        <li><a href="#j-chart9">本月测试做房流程达标率</a></li>
+        <li><a href="#j-chart10">公共区域各类别达标率</a></li>
         <li class="divider"></li>
-        <li><a href="#j-chart11">Chart11</a></li>
-        <li><a href="#j-chart12">Chart12</a></li>
-        <li><a href="#j-chart13">Chart13</a></li>
-        <li><a href="#j-chart14">Chart14</a></li>
+        <li><a href="#j-chart11">酒店面客各区域达标率</a></li>
+        <li><a href="#j-chart12">酒店各类别整体达标率</a></li>
+        <li><a href="#j-chart13">客房核心品质关注点达标率</a></li>
+        <li><a href="#j-chart14">酒店质检各板块加权达标率</a></li>
       </ul>
     </li>
   
     <li><a href="#">监控报表</a></li>
-    <li class="pull-right">
-      <div class="input-append">
-        <input class="span2" id="appendedInputButtons" type="text">
-        <select class="span2">
-          <option>搜索条件</option>
-          <option>店名</option>
-          <option>时间段</option>
-          <option>指标项</option>
-          <option>其他质检条件</option>
-        </select>
-        <button class="btn" type="button">Search</button>
-      </div>
-    </li>
   </ul>
+  <form class="form-horizontal">
+    <div class="control-group">
+      <label class="control-label" for="input-process">店名</label>
+      <div class="controls">
+        <select>
+          <option>店名1234</option>
+          <option>店名5678</option>
+          <option>店名9101</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="input-point1">时间段</label>
+      <div class="controls">
+        <input type="text" id="input-point1" placeholder="起始时间"> 至
+        <input type="text" id="input-point1" placeholder="终止时间">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="input-point">指标</label>
+      <div class="controls">
+        <input type="text" id="input-point" placeholder="指标">
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <button type="submit" class="btn">查询</button>
+      </div>
+    </div>
+  </form>
       <div class="charts hide j-chart1" style="width:98%; height:98%;"></div>
       <div class="charts hide j-chart2" style="width:98%; height:98%;"></div>
       <div class="charts hide j-chart3" style="width:98%; height:400px;"></div>

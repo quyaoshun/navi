@@ -12,7 +12,7 @@
 <body>
 <div class="nav">
     <ul class="navigator">
-        <li><a href="javascript:void(0);">标准体系</a></li>
+        <li><a class="toq" href="javascript:void(0);">标准体系</a></li>
         <li class="selected"><a href="javascript:void(0);">标准录入</a></li>
         <li><a href="javascript:void(0);">质检执行</a></li>
         <li><a href="javascript:void(0);">工单处理</a></li>
@@ -33,7 +33,10 @@
         ds.navLink.removeClass('selected')
         $(_this).parent().addClass('selected')
       })
-
+      $('.toq').on(click, function(e){
+        e.preventDefault()
+        window.location.href  = location.href = 'q.html'
+      })
   })
 </script>
 </body>

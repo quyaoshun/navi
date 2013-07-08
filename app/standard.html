@@ -15,38 +15,29 @@
   </ul>
 
   <h3><center>房间卫生巡检</center></h3>
-  <form class="form-horizontal">
+  <div class="row">
+    <span class="span3">所属类别：房间卫生</span>
+    <span class="span3">考察点：床具卫生</span>
+    <span class="span3">特殊处理方式：******</span>
+    <span class="span3">所占分值：5</span>
+  </div>
+  <form class="form-horizontal" style='margin-top:30px'>
     <div class="control-group">
-      <label class="control-label" for="input-process">步骤</label>
+      <label class="control-label" for="input-point">实际得分：</label>
       <div class="controls">
-        <select>
-          <option>检查房间卫生</option>
-          <option>检查卫生间卫生</option>
-        </select>
+        <input type="text" id="input-point" placeholder="实际得分">
       </div>
     </div>
     <div class="control-group">
-      <label class="control-label" for="input-point">考察点</label>
+      <label class="control-label" for="input-point">考核结果描述：</label>
       <div class="controls">
-        <input type="text" id="input-point" placeholder="考察点">
+        <textarea id="input-point" placeholder="考核结果描述" rows="3"></textarea>
       </div>
     </div>
     <div class="control-group">
-      <label class="control-label" for="input-point">特殊处理方式及其他</label>
+      <label class="control-label" for="input-point">附件上传（照片或文件）：</label>
       <div class="controls">
-        <input type="text" id="input-point" placeholder="特殊处理方式及其他">
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="input-point">分值</label>
-      <div class="controls">
-        <input type="text" id="input-point" placeholder="分值">
-      </div>
-    </div>
-    <div class="control-group">
-      <label class="control-label" for="input-point1">实际得分</label>
-      <div class="controls">
-        <input type="text" id="input-point1" placeholder="实际得分">
+        <input type="file" id="input-point" value="上传附件">
       </div>
     </div>
     <div class="control-group">
@@ -55,6 +46,14 @@
       </div>
     </div>
   </form>
+  <ul class="pager">
+    <li class="previous">
+    <a href="#">&larr; 上一考核项</a>
+    </li>
+    <li class="next">
+    <a href="#">下一考核项 &rarr;</a>
+    </li>
+  </ul>
 <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/js/bootstrap.min.js"></script>
 </body>
