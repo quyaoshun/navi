@@ -19,6 +19,8 @@
       </a>
       <ul class="dropdown-menu">
         <!-- links -->
+        <li><a href="#j-rank1">集团服务达标率排名</a></li>
+        <li><a href="#j-chart8">指标变化趋势</a></li>
         <li><a href="#j-chart1">前台各项服务测试达标率</a></li>
         <li class="divider"></li>
         <li><a href="#j-chart2">本月所查客房各类别达标率</a></li>
@@ -46,7 +48,12 @@
   </ul>
   <form class="form-horizontal">
     <div class="control-group">
-      <label class="control-label" for="input-process">店名</label>
+      <label class="control-label" for="somename">店名</label>
+      <div class="controls">
+        <input type="text" id="somename" placeholder="店名"> 
+        <button class="btn btn-primary" type="text" id="add-name">选择店名</button>
+      </div>
+      <!--      
       <div class="controls">
         <select>
           <option>店名1234</option>
@@ -54,6 +61,7 @@
           <option>店名9101</option>
         </select>
       </div>
+      -->
     </div>
     <div class="control-group">
       <label class="control-label" for="input-point1">时间段</label>
@@ -74,6 +82,37 @@
       </div>
     </div>
   </form>
+  <div class="charts hide j-rank1">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>排名</th>
+        <th>店名</th>
+        <th>服务规范达标率</th>
+      </th>
+      <tr>
+        <td>1</td>
+        <td>东莞厚街店</td>
+        <td>97.56%</td>
+      </th>
+      <tr>
+        <td>2</td>
+        <td>上海虹桥机场漕宝路店</td>
+        <td>97.09%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>深圳双龙地铁站店</td>
+        <td>96.79%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>佛山南海大道店</td>
+        <td>96.55%</td>
+      </tr>
+    </table>
+
+    <button class="btn btn-primary pull-right">导出</button>
+  </div>
       <div class="charts hide j-chart1" style="width:98%; height:98%;"></div>
       <div class="charts hide j-chart2" style="width:98%; height:98%;"></div>
       <div class="charts hide j-chart3" style="width:98%; height:400px;"></div>
@@ -81,6 +120,7 @@
       <div class="charts hide j-chart5" style="width:98%; height:400px;"></div>
       <div class="charts hide j-chart6" style="width:98%; height:400px;"></div>
       <div class="charts hide j-chart7" style="width:98%; height:400px;"></div>
+      <div class="charts hide j-chart8" style="width:98%; height:400px;"></div>
       <div class="charts hide j-chart9" style="width:98%; height:400px;"></div>
       <div class="charts hide j-chart10" style="width:98%; height:400px;"></div>
       <div class="charts hide j-chart11" style="width:98%; height:400px;"></div>
@@ -88,6 +128,37 @@
       <div class="charts hide j-chart13" style="width:98%; height:400px;"></div>
       <div class="charts hide j-chart14" style="width:98%; height:400px;"></div>
 
+    <div class="table2 hide">
+      <h3><center>指标变化趋势</center></h3>
+  <table class="table table-bordered table-hover">
+    <tr>
+      <th>店名</th>
+      <th>时间</th>
+      <th>达标率</th>
+    </tr>
+    <tr>
+      <td>江苏太仓南洋广场店</td>
+      <td>2013年07月</td>
+      <td>87.48</td>
+    </tr>
+    <tr>
+      <td>东莞厚街店</td>
+      <td>2013年07月</td>
+      <td>89.18</td>
+    </tr>
+    <tr>
+      <td>佛山南海大沥海悦店</td>
+      <td>2013年07月</td>
+      <td>92.00</td>
+    </tr>
+    <tr>
+      <td>深圳油松店</td>
+      <td>2013年07月</td>
+      <td>83.3892.00</td>
+    </tr>
+  </table>
+  <button class="btn btn-primary pull-right">导出</button>
+    </div>
 <script type="text/javascript" src="bower_components/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="bower_components/bootstrap/js/bootstrap.min.js"></script>
     <!--Tab切换效果-->
@@ -100,6 +171,11 @@
             , tableShowClassName ='.' + $(_this).attr('href').slice(1)
             $('.charts').addClass('hide')
             $(tableShowClassName).removeClass('hide')
+            if($(".j-chart8").hasClass('hide')){
+              $('.table2').addClass('hide')
+            } else {
+              $('.table2').removeClass('hide')
+            }
         })
 	  })
 </script>
@@ -274,6 +350,36 @@
       },{
         name: '安全保障',
         data: [100, 100]
+      }]
+    });
+
+    $('.j-chart8').highcharts({
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: '表八 服务规范达标率'
+      },
+      xAxis: {
+        categories: ['2013年07月', '2013年07月', '2013年07月']
+      },
+      yAxis: {
+        title: {
+          text: '达标率(%)'
+        }
+      },
+      series: [{
+        name: '江苏太仓南洋广场店',
+        data: [87.48, 87.48, 90.54]
+      },{
+        name: '东莞厚街店',
+        data: [89.18, 97.54, 87.48]
+      },{
+        name: '佛山南海大沥海悦店',
+        data: [92.00, 83.54, 87.48]
+      },{
+        name: '深圳油松店',
+        data: [83.38, 87.48, 93.54]
       }]
     });
 
