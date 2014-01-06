@@ -1,17 +1,44 @@
-<table>
+<ul class="nav nav-tabs">
+    <li class="active"><a href="#">我的心愿单</a></li>
+    <li><a href="#">我的在读</a></li>
+    <li><a href="#">我的已读</a></li>
+    <li class="pull-right"><a class="btn btn-link" href="#">添加</a></li>
+</ul>
+<content>
+<table class="table table-hover table-responsive reading-list">
     <tr>
-        <td>M</td>
-        <td>MM</td>
-        <td>MM</td>
+        <th><span class="badge">序号</span></th>
+        <th><span class="label label-success">书名</span></th>
+        <th><span class="label label-warning">作者</span></th>
+        <th><span class="label label-info">标签</span></th>
+        <th><span class="label label-default">添加时间</span></th>
+        <th><span class="label label-primary">操作</span></th>
     </tr>
     <tr>
-        <td>M</td>
-        <td>MM</td>
-        <td>MM</td>
-    </tr>
-    <tr>
-        <td>M</td>
-        <td>MM</td>
-        <td>MM</td>
+        <td><span class="badge">1</span></td>
+        <td><span class="label label-success">JavaScript: The Good Parts</span></td>
+        <td><span class="label label-warning">Douglas Crockford</span></td>
+        <td>
+            <span class="label label-info">JavaScript</span>
+            <span class="label label-info">前端开发</span>
+        </td>
+        <td><span class="label label-default">2014-01-06 18:27:04</span></td>
+        <td>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm">修改</button>
+                <button type="button" class="btn btn-danger btn-sm">删除</button>
+            </div>
+        </td>
     </tr>
 </table>
+</content>
+
+<ul class="pagination pull-right">
+    <li class="disabled"><a href="#">«</a></li>
+    <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">»</a></li>
+</ul>

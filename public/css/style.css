@@ -1,0 +1,17 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00b7ff;
+}
+.reading-list {
+  font-size: 18px;
+}
+.reading-list tr th {
+  font-size: 20px;
+  text-align: center;
+}
+.reading-list tr td {
+  text-align: center;
+}
