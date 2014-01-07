@@ -1,5 +1,5 @@
-var index = require('./controllers/index')
+var user = require('./controllers/index').User
 
 module.exports = function(app) {
-    app.get('/', index.index)
+    app.get('/', user.index)
 }

@@ -9,6 +9,7 @@
     "express": "3.4.7",
     "ejs": "*",
     "stylus": "*",
-    "express-partials": "*"
+    "express-partials": "*",
+    "mongoose": "*"
   }
 }
