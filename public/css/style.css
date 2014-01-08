@@ -1,9 +1,16 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../imgs/bg1.jpg");
 }
 a {
   color: #00b7ff;
+}
+#login {
+  width: 400px;
+  height: 400px;
+  margin-top: 20%;
+  color: #fff;
 }
 .reading-list {
   font-size: 18px;
