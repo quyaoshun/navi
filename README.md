@@ -3,7 +3,14 @@
 
 Web App
 
-第一个模块
+前端准备用AngularJS框架。       
+后端用Node.js
+
+## 登录登出
+
+1. login
+2. logout
+3. signup
 
 ## 读书计划
 
