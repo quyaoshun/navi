@@ -2,23 +2,14 @@ body {
   width: 100%;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: url("../imgs/bg1.jpg") no-repeat fixed center bottom;
-  overflow: hidden;
 }
+#signup,
 #login {
   width: 400px;
-  height: 400px;
-  color: #fff;
+  height: 200px;
   position: absolute;
-  top: 40%;
-}
-#login input {
-  opacity: 0.6;
-  -moz-opacity: 0.6;
-}
-#login button {
-  opacity: 0.8;
-  -moz-opacity: 0.8;
+  top: 50%;
+  margin-top: -100px;
 }
 .d-btn-login strong {
   color: #fff;

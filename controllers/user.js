@@ -1,15 +1,16 @@
 var User = require('../dao').User
 module.exports = {
     index: function(req, res, next) {
-        res.render('index', {
-            title: 'Reading List',
+        return res.render('index', {
+            title: '主页',
             layout: 'layout'
         })
+        next()
     },
-    showSignUp: function(req, res, next) {
-        return res.json({
-            code: 200,
-            msg:'success'
+    getSignUp: function(req, res, next) {
+        return res.render('signup', {
+            title: '注册',
+            layout: 'layout'
         })
         next()
     },
@@ -20,10 +21,10 @@ module.exports = {
         })
         next()
     },
-    showLogin: function(req, res, next) {
-        return res.json({
-            code: 200,
-            msg:'success'
+    getLogin: function(req, res, next) {
+        return res.render('login', {
+            title: '登录',
+            layout: 'layout'
         })
         next()
     },
