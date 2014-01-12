@@ -2,7 +2,7 @@ var models = require('../models'),
     User = models.User
 
     module.exports = {
-        getUserByName: fucntion(names, callback) {
+        getUserByName: function(names, callback) {
             if (names.length === 0) {
                 return callback(null, [])
             }
@@ -10,11 +10,6 @@ var models = require('../models'),
                 name: {
                     $in: names
                 }
-            }, callback)
-        },
-        getUserByLoginName: function(loginName, callback) {
-            User.findOne({
-                loginName: loginName
             }, callback)
         },
         getUserById: function(id, callback) {
@@ -32,11 +27,11 @@ var models = require('../models'),
                 }
             }, callback)
         },
-        saveNewUser: function(user, callback){
+        saveNewUser: function(user, callback) {
             var newUser = new User()
             newUser.name = user.name
             newUser.email = user.email
-            newuser.loginName = user.loginName
+            newuser.password = user.password
             newuser.save(callback)
         }
     }

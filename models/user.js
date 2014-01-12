@@ -6,13 +6,12 @@ var mongoose = require('mongoose'),
             type: String,
             index: true
         },
-        loginName: {
-            type: String,
-            unique: true
-        },
         email: {
             type: String,
             unique: true
+        },
+        password: {
+            type: String
         },
         createTime: {
             type: Date,
@@ -24,4 +23,4 @@ var mongoose = require('mongoose'),
         }
     })
 
-    mongoose.model('User', UserSchema)
+mongoose.model('User', UserSchema)
