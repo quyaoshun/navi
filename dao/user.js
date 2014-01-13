@@ -27,6 +27,9 @@ var models = require('../models'),
                 }
             }, callback)
         },
+        getUsersByQuery: function(query, opt, callback){
+            User.find(query, [], opt, callback)
+        },
         saveNewUser: function(user, callback) {
             var newUser = new User()
             newUser.name = user.name

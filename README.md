@@ -6,6 +6,10 @@ Web App
 前端准备用AngularJS框架。       
 后端用Node.js
 
+## 开发环境
+
+1. 数据库: MongoDB
+
 ## 登录登出
 
 1. login
@@ -18,4 +22,5 @@ Web App
 2. 我的书单
 3. 我的读书计划
 4. 我的读书笔记
+
 

@@ -2,9 +2,12 @@ $(function() {
     var DS = {
         login: $('#login'),
         loginInput: $('#login input'),
+        inputUserName: $('#inputUserName'),
         inputEmail: $('#inputEmail'),
-        inputPassword: $('inputPassword'),
-        btnLogin: $('.d-btn-login')
+        inputPassword: $('#inputPassword'),
+        repeatPassword: $('#repeatPassword'),
+        btnLogin: $('.d-btn-login'),
+        btnSignUp: $('.d-btn-signup')
     },
         regEmail = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/
 
@@ -22,8 +25,25 @@ $(function() {
     DS.inputEmail.on('blur', function(e) {
         e.preventDefault()
         var _this = this
-        if (inputCheck($(_this), regEmail)) {} else {
+        inputCheck($(_this), regEmail)
+    })
 
+    DS.btnSignUp.on('click', function(e) {
+        e.preventDefault()
+        if (inputCheck(DS.inputEmail, regEmail)) {
+            $.ajax({
+                url: '/signup',
+                type: 'post',
+                data: {
+                    name: DS.inputUserName.val(),
+                    email: DS.inputEmail.val(),
+                    password: DS.inputPassword.val(),
+                    repeatPassword: DS.repeatPassword.val()
+                },
+                success: function(data) {
+                    alert(data.msg)
+                }
+            })
         }
     })
 
