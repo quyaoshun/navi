@@ -27,16 +27,32 @@ var User = require('../dao').User,
                     code: 400,
                     msg: 'example',
                     usrInfo: {
-                        email: 'example@example.com',
-                        name: 'example'
+                        email: email,
+                        name: name
                     }
                 }
-            if (name === '' || email === '' || passwd === '' || repeatPasswd === '') {
+            if (!name || !email || !passwd || !repeatPasswd) {
                 resJson.msg = '信息不完整'
                 return res.json(resJson)
             }
+            if (!validator.isAlphanumeric(name)) {
+                resJson.msg = '用户名只能为字母或数字'
+                return res.json(resJson)
+            }
+            if (!validator.isEmail(email)) {
+                resJson.msg = '邮箱不正确'
+                return res.json(resJson)
+            }
+            if (passwd !== repeatPasswd) {
+                resJson.msg = '两次输入密码不匹配'
+                return res.json(resJson)
+            }
             User.getUsersByQuery({
-                '$or': [{ 'name': name }, { 'email': email }]
+                '$or': [{
+                    'name': name
+                }, {
+                    'email': email
+                }]
             }, {}, function(err, users) {
                 if (err) {
                     return next(err)
@@ -56,15 +72,8 @@ var User = require('../dao').User,
                     if (err) {
                         return next(err)
                     }
-
-                    return res.json({
-                        code: 200,
-                        msg: '注册成功',
-                        usrInfo: {
-                            email: email,
-                            name: name
-                        }
-                    })
+                    resJson.msg = '注册成功'
+                    return res.json(resJson)
                 })
             })
         },
@@ -76,11 +85,42 @@ var User = require('../dao').User,
             next()
         },
         login: function(req, res, next) {
-            return res.json({
-                code: 200,
-                msg: 'success'
-            })
-            next()
+            var md5 = crypto.createHash('md5'),
+                loginUser = req.body.loginUser.toString().trim(),
+                passwd = req.body.password.toString().trim(),
+                email, name,
+                resJson = {
+                    code: 400,
+                    msg: 'example'
+                }
+
+            if (!loginUser || !passwd) {
+                resJson.msg = '信息不完整'
+                return res.json(resJson)
+            }
+            if (validator.isEmail(loginUser)) {
+                email = loginUser
+                User.getUserByEmail(email, login)
+            } else {
+                name = loginUser
+                User.getUserByName(name, login)
+            }
+            function login(err, user) {
+                if (err) {
+                    return next(err)
+                }
+                if (!user) {
+                    resJson.msg = '用户不存在'
+                    return res.json(resJson)
+                }
+                passwd = md5.update(passwd).digest('base64')
+                if (passwd !== user.password) {
+                    resJson.msg = '密码错误'
+                    return res.json(resJson)
+                }
+                resJson.msg = '登录成功'
+                return res.json(resJson)
+            }
         },
         logout: function(req, res, next) {
 

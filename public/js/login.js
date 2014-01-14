@@ -4,6 +4,7 @@ $(function() {
         loginInput: $('#login input'),
         inputUserName: $('#inputUserName'),
         inputEmail: $('#inputEmail'),
+        loginUser: $('#loginUser'),
         inputPassword: $('#inputPassword'),
         repeatPassword: $('#repeatPassword'),
         btnLogin: $('.d-btn-login'),
@@ -49,19 +50,17 @@ $(function() {
 
     DS.btnLogin.on('click', function(e) {
         e.preventDefault()
-        if (inputCheck(DS.inputEmail, regEmail)) {
-            $.ajax({
-                url: '/login',
-                type: 'post',
-                data: {
-                    email: DS.inputEmail.val(),
-                    password: DS.inputPassword.val()
-                },
-                success: function(data) {
-                    alert(data.msg)
-                }
-            })
-        }
+        $.ajax({
+            url: '/login',
+            type: 'post',
+            data: {
+                loginUser: DS.loginUser.val(),
+                password: DS.inputPassword.val()
+            },
+            success: function(data) {
+                alert(data.msg)
+            }
+        })
     })
 
     function inputCheck(input, reg) {

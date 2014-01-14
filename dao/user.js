@@ -2,7 +2,7 @@ var models = require('../models'),
     User = models.User
 
     module.exports = {
-        getUserByName: function(names, callback) {
+        getUsersByNames: function(names, callback) {
             if (names.length === 0) {
                 return callback(null, [])
             }
@@ -12,12 +12,20 @@ var models = require('../models'),
                 }
             }, callback)
         },
+        getUserByName: function(name, callback) {
+            User.findOne({ name: name }, callback)
+        },
+        getUserByEmail: function(email, callback){
+            User.findOne({
+                email: email
+            }, callback)
+        },
         getUserById: function(id, callback) {
             User.findOne({
                 _id: id
             }, callback)
         },
-        getUserByIds: function(ids, callback) {
+        getUsersByIds: function(ids, callback) {
             if (ids.length === 0) {
                 return callback(null, [])
             }
