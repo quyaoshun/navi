@@ -41,17 +41,17 @@ var User = require('../dao').User,
                 if (err) {
                     return next(err)
                 }
-                if (user.length > 0) {
+                if (users.length > 0) {
                     resJson.msg = '用户名或邮箱被占用'
                     return res.json(resJson)
                 }
 
                 passwd = md5.update(passwd).digest('base64')
-                var user = new User({
+                var user = {
                     name: name,
                     email: email,
                     password: passwd
-                })
+                }
                 User.saveNewUser(user, function(err) {
                     if (err) {
                         return next(err)

@@ -28,13 +28,13 @@ var models = require('../models'),
             }, callback)
         },
         getUsersByQuery: function(query, opt, callback){
-            User.find(query, [], opt, callback)
+            User.find(query, null, opt, callback)
         },
         saveNewUser: function(user, callback) {
             var newUser = new User()
             newUser.name = user.name
             newUser.email = user.email
-            newuser.password = user.password
-            newuser.save(callback)
+            newUser.password = user.password
+            newUser.save(callback)
         }
     }
