@@ -2,13 +2,10 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     BookSchema = new Schema({
-        reader: {
-            type: ObjectId 
-        },
         bookId: {
             type: ObjectId
         },
-        name: {
+        bookName: {
             type: String,
             default: ''
         },
@@ -17,8 +14,11 @@ var mongoose = require('mongoose'),
             default: ''
         },
         addTime: {
-            type: Date,
-            default: Date.now
+            type: Date
+        },
+        press: {
+            type: String,
+            default: ''
         }
     })
 
