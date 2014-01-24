@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
         bookId: {
             type: ObjectId
         },
-        bookName: {
+        name: {
             type: String,
             default: ''
         },
@@ -13,8 +13,16 @@ var mongoose = require('mongoose'),
             type: String,
             default: ''
         },
-        addTime: {
+        publicTime: {
             type: Date
+        },
+        addTime: {
+            type: Date,
+            default: Date.now
+        },
+        updateTime: {
+            type: Date
+            default: Date.now
         },
         press: {
             type: String,

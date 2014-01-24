@@ -8,7 +8,6 @@ mongoose.connect(config.db, function(err){
     }
 })
 
-
 require('./user')
 require('./book')
 
