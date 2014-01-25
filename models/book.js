@@ -5,13 +5,17 @@ var mongoose = require('mongoose'),
         bookId: {
             type: ObjectId
         },
-        name: {
-            type: String,
-            default: ''
+        title: {
+            type: String
+        },
+        desc: {
+            type: String
         },
         author: {
-            type: String,
-            default: ''
+            type: String
+        },
+        press: {
+            type: String
         },
         publicTime: {
             type: Date
@@ -23,11 +27,7 @@ var mongoose = require('mongoose'),
         updateTime: {
             type: Date,
             default: Date.now
-        },
-        press: {
-            type: String,
-            default: ''
         }
     })
 
-mongoose.model('Book', BookSchema)
+    mongoose.model('Book', BookSchema)
