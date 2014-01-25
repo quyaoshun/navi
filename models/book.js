@@ -21,7 +21,7 @@ var mongoose = require('mongoose'),
             default: Date.now
         },
         updateTime: {
-            type: Date
+            type: Date,
             default: Date.now
         },
         press: {
