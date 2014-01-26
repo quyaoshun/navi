@@ -17,7 +17,7 @@ var mongoose = require('mongoose'),
         press: {
             type: String
         },
-        publicTime: {
+        ReleaseDate: {
             type: Date
         },
         addTime: {

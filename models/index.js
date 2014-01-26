@@ -10,6 +10,8 @@ mongoose.connect(config.db, function(err){
 
 require('./user')
 require('./book')
+require('./book_collect')
 
 exports.User = mongoose.model('User')
 exports.Book = mongoose.model('Book')
+exports.BookCollect = mongoose.model('BookCollect')
