@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     BookSchema = new Schema({
-        bookId: {
+        _id: {
             type: ObjectId
         },
         title: {
@@ -17,7 +17,7 @@ var mongoose = require('mongoose'),
         press: {
             type: String
         },
-        ReleaseDate: {
+        releaseDate: {
             type: Date
         },
         addTime: {
