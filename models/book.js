@@ -20,7 +20,7 @@ var mongoose = require('mongoose'),
         releaseDate: {
             type: Date
         },
-        addTime: {
+        createTime: {
             type: Date,
             default: Date.now
         },
