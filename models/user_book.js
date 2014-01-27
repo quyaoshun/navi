@@ -1,10 +1,9 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
-    BookCollectSchema = new Schema({
+    UserBookSchema = new Schema({
         userId: {
-            type: ObjectId,
-            index: true
+            type: ObjectId
         },
         bookId: {
             type: ObjectId
@@ -15,4 +14,4 @@ var mongoose = require('mongoose'),
         }
     })
 
-mongoose.model('BookCollect', BookCollectSchema)
+mongoose.model('UserBook', UserBookSchema)
