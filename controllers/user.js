@@ -3,7 +3,7 @@ var User = require('../dao').User,
     crypto = require('crypto')
     module.exports = {
         authorize: function(req, res, next) {
-            if (!req.session.user_id) {
+            if (!req.session.user) {
                 res.redirect('/')
             }
             next()
@@ -16,7 +16,7 @@ var User = require('../dao').User,
             next()
         },
         getSignUp: function(req, res, next) {
-            return res.render('signup', {
+            return res.render('user/signup', {
                 title: '注册',
                 layout: 'layout'
             })
@@ -83,7 +83,7 @@ var User = require('../dao').User,
             })
         },
         getLogin: function(req, res, next) {
-            return res.render('login', {
+            return res.render('user/login', {
                 title: '登录',
                 layout: 'layout'
             })
@@ -129,7 +129,8 @@ var User = require('../dao').User,
             }
         },
         logout: function(req, res, next) {
-
+            req.session.user = null
+            res.redirect('/')
         },
         checkLogin: function(req, res, next) {
             if (req.session.user) {

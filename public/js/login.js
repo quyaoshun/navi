@@ -33,7 +33,7 @@ $(function() {
         e.preventDefault()
         if (inputCheck(DS.inputEmail, regEmail)) {
             $.ajax({
-                url: '/signup',
+                url: '/user/signup',
                 type: 'post',
                 data: {
                     name: DS.inputUserName.val(),
@@ -51,7 +51,7 @@ $(function() {
     DS.btnLogin.on('click', function(e) {
         e.preventDefault()
         $.ajax({
-            url: '/login',
+            url: '/user/login',
             type: 'post',
             data: {
                 loginUser: DS.loginUser.val(),
