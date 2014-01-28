@@ -2,6 +2,12 @@ var User = require('../dao').User,
     validator = require('validator'),
     crypto = require('crypto')
     module.exports = {
+        authorize: function(req, res, next) {
+            if (!req.session.user_id) {
+                res.redirect('/')
+            }
+            next()
+        },
         index: function(req, res, next) {
             return res.render('index', {
                 title: '主页',
@@ -104,6 +110,7 @@ var User = require('../dao').User,
                 name = loginUser
                 User.getUserByName(name, login)
             }
+
             function login(err, user) {
                 if (err) {
                     return next(err)

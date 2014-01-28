@@ -1,4 +1,5 @@
-var user = require('./controllers/index').User
+var user = require('./controllers/index').User,
+    book = require('./controllers/index').Book
 
 module.exports = function(app) {
     app.get('/', user.index)
@@ -7,4 +8,6 @@ module.exports = function(app) {
     app.get('/login', user.getLogin)
     app.post('/login', user.login)
     app.get('/logout', user.logout)
+
+    app.get('/book', book.getBooks)
 }
