@@ -2,10 +2,9 @@ var models = require('../models'),
     UserBook = models.UserBook
 
 module.exports = {
-    getUserBook: function(userId, bookId, callback){
+    getUserBooks: function(userId, callback){
         UserBook.findOne({
-            userId: userId,
-            bookId: bookId
+            userId: userId
         }, callback)
     },
     getUserBookByUserId: function(userId, callback){
