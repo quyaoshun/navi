@@ -1,3 +1,3 @@
 exports.User = require('./user')
 exports.Book = require('./book')
-exports.BookCollect = require('./book_collect')
+exports.UserBook = require('./user_book')

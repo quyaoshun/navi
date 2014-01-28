@@ -17,7 +17,6 @@ var User = require('../dao').User,
             next()
         },
         signUp: function(req, res, next) {
-            console.log(req.body.name)
             var md5 = crypto.createHash('md5'),
                 name = req.body.name.toString().trim(),
                 email = req.body.email.toString().trim(),
