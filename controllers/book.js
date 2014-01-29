@@ -11,6 +11,12 @@ module.exports = {
         next()
     },
     addBook: function(req, res, next) {
+        var bookTitle = req.body.booktitle.toString().trim(),
+            bookDesc = req.body.bookdesc.toString().trim(),
+            bookAuthor = req.body.bookauthor.toString().trim(),
+            bookPress = req.body.bookpress.toString().trim(),
+            bookReleaseDate = req.body.bookreleasedate.toString().trim()
+
 
     },
     editBook: function(req, res, next) {
