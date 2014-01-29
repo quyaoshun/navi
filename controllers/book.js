@@ -4,7 +4,7 @@ var Book = require('../dao').Book,
 
 module.exports = {
     getBooks: function(req, res, next){
-        return res.render('book', {
+        return res.render('book/book', {
             title: '书单',
             layout: 'layout'
         })

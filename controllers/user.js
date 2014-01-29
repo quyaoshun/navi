@@ -2,12 +2,6 @@ var User = require('../dao').User,
     validator = require('validator'),
     crypto = require('crypto')
     module.exports = {
-        authorize: function(req, res, next) {
-            if (!req.session.user) {
-                res.redirect('/')
-            }
-            next()
-        },
         index: function(req, res, next) {
             return res.render('index', {
                 title: '主页',
@@ -37,19 +31,19 @@ var User = require('../dao').User,
                     }
                 }
             if (!name || !email || !passwd || !repeatPasswd) {
-                resJson.msg = '信息不完整'
+                resJson.msg = '信息不完整!'
                 return res.json(resJson)
             }
             if (!validator.isAlphanumeric(name)) {
-                resJson.msg = '用户名只能为字母或数字'
+                resJson.msg = '用户名只能为字母或数字!'
                 return res.json(resJson)
             }
             if (!validator.isEmail(email)) {
-                resJson.msg = '邮箱不正确'
+                resJson.msg = '邮箱不正确!'
                 return res.json(resJson)
             }
             if (passwd !== repeatPasswd) {
-                resJson.msg = '两次输入密码不匹配'
+                resJson.msg = '两次输入密码不匹配!'
                 return res.json(resJson)
             }
             User.getUsersByQuery({
@@ -63,10 +57,9 @@ var User = require('../dao').User,
                     return next(err)
                 }
                 if (users.length > 0) {
-                    resJson.msg = '用户名或邮箱被占用'
+                    resJson.msg = '用户名或邮箱被占用!'
                     return res.json(resJson)
                 }
-
                 passwd = md5.update(passwd).digest('base64')
                 var user = {
                     name: name,
@@ -77,7 +70,7 @@ var User = require('../dao').User,
                     if (err) {
                         return next(err)
                     }
-                    resJson.msg = '注册成功'
+                    resJson.msg = '注册成功!'
                     return res.json(resJson)
                 })
             })
@@ -100,7 +93,7 @@ var User = require('../dao').User,
                 }
 
             if (!loginUser || !passwd) {
-                resJson.msg = '信息不完整'
+                resJson.msg = '信息不完整!'
                 return res.json(resJson)
             }
             if (validator.isEmail(loginUser)) {
@@ -116,15 +109,15 @@ var User = require('../dao').User,
                     return next(err)
                 }
                 if (!user) {
-                    resJson.msg = '用户不存在'
+                    resJson.msg = '用户不存在!'
                     return res.json(resJson)
                 }
                 passwd = md5.update(passwd).digest('base64')
                 if (passwd !== user.password) {
-                    resJson.msg = '密码错误'
+                    resJson.msg = '密码错误!'
                     return res.json(resJson)
                 }
-                resJson.msg = '登录成功'
+                resJson.msg = '登录成功!'
                 return res.json(resJson)
             }
         },
@@ -132,17 +125,9 @@ var User = require('../dao').User,
             req.session.user = null
             res.redirect('/')
         },
-        checkLogin: function(req, res, next) {
-            if (req.session.user) {
-                req.flash('message', '未登录')
-                return res.redirect('/login')
-            }
-            next()
-        },
-        checkNotLogin: function(req, res, next) {
+        authorize: function(req, res, next) {
             if (!req.session.user) {
-                res.flash('message', '已登录')
-                return res.redirect('/')
+                return res.redirect('/user/login')
             }
             next()
         }
