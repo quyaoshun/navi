@@ -2,7 +2,8 @@
     <li class="active"><a href="#">我的书单</a>
     </li>
     <li class="pull-right">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addBook"><strong>添加</strong></button>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#addBook"><strong>添加</strong>
+        </button>
 </ul>
 <content>
     <table class="table table-hover table-responsive reading-list">
@@ -72,7 +73,26 @@
                 <h4 class="modal-title" id="myModalLabel">添加书单</h4>
             </div>
             <div class="modal-body">
-                
+                <div class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="bookname" class="col-sm-2 control-label">书名</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="bookname" placeholder="Book Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookdesc" class="col-sm-2 control-label">描述</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="bookdesc" placeholder="Book Description">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookauthor" class="col-sm-2 control-label">作者</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="bookauthor" placeholder="Book Author">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary">提交</button>
