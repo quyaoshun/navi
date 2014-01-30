@@ -29,6 +29,6 @@ module.exports = {
         newBook.author = book.author
         newBook.press = book.press
         newBook.releaseDate = book.releaseDate
-        newBook.save(callBack)
+        newBook.save(callback)
     }
 }

@@ -2,9 +2,6 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     BookSchema = new Schema({
-        _id: {
-            type: ObjectId
-        },
         title: {
             type: String
         },

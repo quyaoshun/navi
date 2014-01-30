@@ -10,4 +10,5 @@ module.exports = function(app) {
     app.get('/user/logout', user.logout)
 
     app.get('/book', book.getBooks)
+    app.post('/book/addbook', book.addBook)
 }
