@@ -117,6 +117,7 @@ var User = require('../dao').User,
                     resJson.msg = '密码错误!'
                     return res.json(resJson)
                 }
+                resJson.code = 200
                 resJson.msg = '登录成功!'
                 return res.json(resJson)
             }
