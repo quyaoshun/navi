@@ -19,9 +19,11 @@ module.exports = {
     },
     saveNewBook: function(book, callback) {
         var newBook = new Book()
-        newBook.name = book.name
+        newBook.title = book.title
+        newBook.desc = book.desc
         newBook.author = book.author
-        newBook.publicTime = book.publicTime
+        newBook.press = book.press
+        newBook.releaseDate = book.releaseDate
         newBook.save(callBack)
     }
 }
