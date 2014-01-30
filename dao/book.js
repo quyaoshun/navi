@@ -7,7 +7,7 @@ module.exports = {
             return callback(null, [])
         }
         Book.find({
-            bookId: {
+            _id: {
                 $in: ids
             }
         }, callback)
@@ -15,6 +15,11 @@ module.exports = {
     getBookById: function(id, callback) {
         Book.findOne({
             _id: id
+        }, callback)
+    },
+    getBookByTitle: function(title, callback) {
+        Book.find({
+            title: title
         }, callback)
     },
     saveNewBook: function(book, callback) {
