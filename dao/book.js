@@ -2,6 +2,9 @@ var models = require('../models'),
     Book = models.Book
 
 module.exports = {
+    getBookList: function(query, opt, callback){
+        Book.find(query, opt, callback)
+    },
     getBooksByIds: function(ids, callback) {
         if (ids.length === 0) {
             return callback(null, [])
