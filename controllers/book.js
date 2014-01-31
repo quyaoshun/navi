@@ -2,21 +2,25 @@ var Book = require('../dao').Book,
     validator = require('validator'),
     crypto = require('crypto')
 
-module.exports = {
-    getBooks: function(req, res, next){
-        return res.render('book/book', {
-            title: '书单',
-            layout: 'layout'
-        })
-        next()
-    },
-    addBook: function(req, res, next) {
-        var bookTitle = req.body.bookTitle.toString().trim(),
-            bookDesc = req.body.bookDesc.toString().trim(),
-            bookAuthor = req.body.bookAuthor.toString().trim(),
-            bookPress = req.body.bookPress.toString().trim(),
-            bookReleaseDate = req.body.bookReleaseDate.toString().trim()
-            resJson = {
+    module.exports = {
+        getBooks: function(req, res, next) {
+            Book.getBookList({}, [], function() {
+
+            })
+            return res.render('book/book', {
+                title: '书单',
+                books: books,
+                layout: 'layout'
+            })
+            next()
+        },
+        addBook: function(req, res, next) {
+            var bookTitle = req.body.bookTitle.toString().trim(),
+                bookDesc = req.body.bookDesc.toString().trim(),
+                bookAuthor = req.body.bookAuthor.toString().trim(),
+                bookPress = req.body.bookPress.toString().trim(),
+                bookReleaseDate = req.body.bookReleaseDate.toString().trim()
+                resJson = {
                     code: 400,
                     msg: 'example',
                     bookInfo: {
@@ -28,11 +32,11 @@ module.exports = {
                     }
                 }
 
-            Book.getBookByTitle(bookTitle,function(err, books){
+            Book.getBookByTitle(bookTitle, function(err, books) {
                 if (err) {
-                   return next(err) 
+                    return next(err)
                 }
-                if (books.length > 0){
+                if (books.length > 0) {
                     resJson.msg = "同样书名已被添加！"
                     return res.json(resJson)
                 }
@@ -53,11 +57,11 @@ module.exports = {
                 })
             })
 
-    },
-    editBook: function(req, res, next) {
+        },
+        editBook: function(req, res, next) {
 
-    },
-    removeBook: function(req, res, next){
+        },
+        removeBook: function(req, res, next) {
 
+        }
     }
-}
