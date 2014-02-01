@@ -8,14 +8,14 @@ var Book = require('../dao').Book,
                 if (err) {
                     next(err)
                 }
-                return res.render('book/book', {
+                /* return res.render('book/book', {
                     title: '书单',
                     booklist: books,
                     layout: 'layout'
-                })
-                /* return res.json({
-                    booklist: books
                 }) */
+                return res.json({
+                    booklist: books
+                })
                 next()
             })
         },
@@ -45,14 +45,14 @@ var Book = require('../dao').Book,
                     resJson.msg = "同样书名已被添加！"
                     return res.json(resJson)
                 }
-                var book = {
+                var newBook = {
                     title: bookTitle,
                     desc: bookDesc,
                     author: bookAuthor,
                     press: bookPress,
                     releaseDate: bookReleaseDate
                 }
-                Book.saveNewBook(book, function(err) {
+                Book.saveNewBook(newBook, function(err) {
                     if (err) {
                         return next(err)
                     }
@@ -61,12 +61,40 @@ var Book = require('../dao').Book,
                     return res.json(resJson)
                 })
             })
-
         },
-        editBook: function(req, res, next) {
-
+        updateBook: function(req, res, next) {
+            var bookId = req.body.bookId.toString().trim()
+                bookTitle = req.body.bookTitle.toString().trim(),
+                bookDesc = req.body.bookDesc.toString().trim(),
+                bookAuthor = req.body.bookAuthor.toString().trim(),
+                bookPress = req.body.bookPress.toString().trim(),
+                bookReleaseDate = req.body.bookReleaseDate.toString().trim()
+                updateBook = {
+                    title: bookTitle,
+                    desc: bookDesc,
+                    author: bookAuthor,
+                    press: bookPress,
+                    releaseDate: bookReleaseDate
+                }
+            Book.findByIdAndUpdate(bookId, updateBook, function(err, book){
+                if (err) {
+                    return next(err)
+                }
+                return res.json({
+                    updateBook: book
+                })
+                next()
+            })
         },
         removeBook: function(req, res, next) {
-
+            var bookId = req.body.bookId.toString().trim()
+            Book.findByIdAndRemove(bookId, function(err, book){
+                if (err) {
+                    return next(err)
+                }
+                return res.json({
+                    removeBook: book
+                })
+            })
         }
     }
