@@ -11,4 +11,5 @@ var user = require('./controllers/index').User,
 
         app.get('/book', book.getBooks)
         app.post('/book/addbook', book.addBook)
+        app.post('/book/removebook', book.removeBook)
     }
