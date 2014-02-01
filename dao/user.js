@@ -13,9 +13,11 @@ var models = require('../models'),
             }, callback)
         },
         getUserByName: function(name, callback) {
-            User.findOne({ name: name }, callback)
+            User.findOne({
+                name: name
+            }, callback)
         },
-        getUserByEmail: function(email, callback){
+        getUserByEmail: function(email, callback) {
             User.findOne({
                 email: email
             }, callback)
@@ -35,7 +37,7 @@ var models = require('../models'),
                 }
             }, callback)
         },
-        getUsersByQuery: function(query, opt, callback){
+        getUsersByQuery: function(query, opt, callback) {
             User.find(query, null, opt, callback)
         },
         saveNewUser: function(user, callback) {

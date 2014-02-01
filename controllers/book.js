@@ -4,15 +4,20 @@ var Book = require('../dao').Book,
 
     module.exports = {
         getBooks: function(req, res, next) {
-            Book.getBookList({}, [], function() {
-
+            Book.getBookList({}, null, function(err, books) {
+                if (err) {
+                    next(err)
+                }
+                return res.render('book/book', {
+                    title: '书单',
+                    booklist: books,
+                    layout: 'layout'
+                })
+                /* return res.json({
+                    booklist: books
+                }) */
+                next()
             })
-            return res.render('book/book', {
-                title: '书单',
-                books: books,
-                layout: 'layout'
-            })
-            next()
         },
         addBook: function(req, res, next) {
             var bookTitle = req.body.bookTitle.toString().trim(),

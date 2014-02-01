@@ -14,4 +14,4 @@ var mongoose = require('mongoose'),
         }
     })
 
-mongoose.model('UserBook', UserBookSchema)
+    mongoose.model('UserBook', UserBookSchema)
