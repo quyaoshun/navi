@@ -3,16 +3,24 @@ var Book = require('../dao').Book,
     crypto = require('crypto')
 
     module.exports = {
+        bookIndex: function(req, res, next){
+            Book.getBookList({}, null, function(err, books) {
+                if (err) {
+                    next(err)
+                }
+                return res.render('book/book', {
+                    title: '书单',
+                    booklist: books,
+                    layout: 'layout'
+                })
+                next()
+            })
+        },
         getBooks: function(req, res, next) {
             Book.getBookList({}, null, function(err, books) {
                 if (err) {
                     next(err)
                 }
-                /* return res.render('book/book', {
-                    title: '书单',
-                    booklist: books,
-                    layout: 'layout'
-                }) */
                 return res.json({
                     booklist: books
                 })
