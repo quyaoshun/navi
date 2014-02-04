@@ -10,7 +10,7 @@ var Book = require('../dao').Book,
                 }
                 return res.render('book/book', {
                     title: '书单',
-                    booklist: books,
+                    books: books,
                     layout: 'layout'
                 })
                 next()
