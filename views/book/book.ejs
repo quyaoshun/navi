@@ -23,20 +23,21 @@
             <th><span class="label label-primary">操作</span>
             </th>
         </tr>
+        <% books.forEach(function(book,i){ %>
         <tr>
-            <td><span class="badge">1</span>
+            <td><span class="badge">{{ i }}</span>
             </td>
-            <td><span class="label label-success">JavaScript: The Good Parts</span>
+            <td><span class="label label-success">{{ book.title }}</span>
             </td>
-            <td><span class="label label-success">A Good JavaScript Book</span>
+            <td><span class="label label-success">{{ book.desc }}</span>
             </td>
-            <td><span class="label label-warning">Douglas Crockford</span>
+            <td><span class="label label-warning">{{ book.author }}</span>
             </td>
             <td>
                 <span class="label label-info">JavaScript</span>
                 <span class="label label-info">前端开发</span>
             </td>
-            <td><span class="label label-default">2014-01-06 18:27:04</span>
+            <td><span class="label label-default">{{ book.releaseDate }}</span>
             </td>
             <td>
                 <div class="btn-group">
@@ -45,6 +46,7 @@
                 </div>
             </td>
         </tr>
+        <% }) %>
     </table>
 </content>
 
