@@ -25,24 +25,24 @@
         </tr>
         <% books.forEach(function(book,i){ %>
         <tr>
-            <td><span class="badge">{{ i }}</span>
+            <td><span class="badge"><%= i %></span>
             </td>
-            <td><span class="label label-success">{{ book.title }}</span>
+            <td><span class="label label-success"><%= book.title %></span>
             </td>
-            <td><span class="label label-success">{{ book.desc }}</span>
+            <td><span class="label label-success"><%= book.desc %></span>
             </td>
-            <td><span class="label label-warning">{{ book.author }}</span>
+            <td><span class="label label-warning"><%= book.author %></span>
             </td>
             <td>
                 <span class="label label-info">JavaScript</span>
                 <span class="label label-info">前端开发</span>
             </td>
-            <td><span class="label label-default">{{ book.releaseDate }}</span>
+            <td><span class="label label-default"><%= book.releaseDate %></span>
             </td>
             <td>
                 <div class="btn-group">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addBook"><strong>修改</strong>
-                    <button type="button" class="btn btn-danger btn-sm">删除</button>
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addBook" data-bookid="<%= book._id %>"><strong>修改</strong>
+                    <button type="button" class="btn btn-danger btn-sm" data-bookid="<%= book._id %>">删除</button>
                 </div>
             </td>
         </tr>
