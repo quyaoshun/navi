@@ -2,7 +2,7 @@
     <li class="active"><a href="#">我的书单</a>
     </li>
     <li class="pull-right">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#addBook"><strong>添加</strong>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#book-add"><strong>添加</strong>
         </button>
 </ul>
 <content>
@@ -46,8 +46,8 @@
             </td>
             <td>
                 <div class="btn-group">
-        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addBook" data-bookid="<%= book._id %>"><strong>修改</strong>
-                    <button type="button" class="btn btn-danger btn-sm" data-bookid="<%= book._id %>">删除</button>
+                    <button type="button" id="book-update" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addBook" data-bookid="<%= book._id %>"><strong>修改</strong></button>
+                    <button type="button" id="book-delete" class="btn btn-danger btn-sm" data-bookid="<%= book._id %>">删除</button>
                 </div>
             </td>
         </tr>
@@ -73,12 +73,12 @@
     </li>
 </ul>
 
-<div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">添加书单</h4>
+                <h4 class="modal-title" id="modal-label">添加书单</h4>
             </div>
             <div class="modal-body">
                 <div class="form-horizontal" role="form">
