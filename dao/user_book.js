@@ -7,7 +7,7 @@ var models = require('../models'),
                 userId: userId
             }, callback)
         },
-        getUserBookByUserId: function(userId, callback) {
+        getBooksByUserId: function(userId, callback) {
             UserBook.find({
                 userId: userId
             }, callback)
