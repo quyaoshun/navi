@@ -5,9 +5,9 @@ var mongoose = require('mongoose'),
         userId: {
             type: ObjectId
         },
-        bookId: {
+        bookId: [{
             type: ObjectId
-        },
+        }],
         addTime: {
             type: Date,
             default: Date.now
