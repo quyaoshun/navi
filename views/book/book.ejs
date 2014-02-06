@@ -16,6 +16,8 @@
             </th>
             <th><span class="label label-warning">作者</span>
             </th>
+            <th><span class="label label-warning">出版社</span>
+            </th>
             <th><span class="label label-info">标签</span>
             </th>
             <th><span class="label label-default">添加时间</span>
@@ -23,6 +25,7 @@
             <th><span class="label label-primary">操作</span>
             </th>
         </tr>
+        <tbody id="book-table">
         <% books.forEach(function(book,i){ %>
         <tr>
             <td><span class="badge"><%= i %></span>
@@ -32,6 +35,8 @@
             <td><span class="label label-success"><%= book.desc %></span>
             </td>
             <td><span class="label label-warning"><%= book.author %></span>
+            </td>
+            <td><span class="label label-warning"><%= book.press %></span>
             </td>
             <td>
                 <span class="label label-info">JavaScript</span>
@@ -47,6 +52,7 @@
             </td>
         </tr>
         <% }) %>
+        </tbody>
     </table>
 </content>
 
@@ -77,33 +83,33 @@
             <div class="modal-body">
                 <div class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="booktitle" class="col-sm-2 control-label">书名</label>
+                        <label for="book-title" class="col-sm-2 control-label">书名</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="booktitle" placeholder="Book Name">
+                            <input type="text" class="form-control" id="book-title" placeholder="Book Name">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bookdesc" class="col-sm-2 control-label">描述</label>
+                        <label for="book-desc" class="col-sm-2 control-label">描述</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="bookdesc" placeholder="Book Description">
+                            <input type="text" class="form-control" id="book-desc" placeholder="Book Description">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bookauthor" class="col-sm-2 control-label">作者</label>
+                        <label for="book-author" class="col-sm-2 control-label">作者</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="bookauthor" placeholder="Book Author">
+                            <input type="text" class="form-control" id="book-author" placeholder="Book Author">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bookpress" class="col-sm-2 control-label">出版社</label>
+                        <label for="book-press" class="col-sm-2 control-label">出版社</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="bookpress" placeholder="Book Press">
+                            <input type="text" class="form-control" id="book-press" placeholder="Book Press">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="bookreleasedate" class="col-sm-2 control-label">出版日期</label>
+                        <label for="book-releasedate" class="col-sm-2 control-label">出版日期</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="bookreleasedate" placeholder="Book Release Date">
+                            <input type="text" class="form-control" id="book-releasedate" placeholder="Book Release Date">
                         </div>
                     </div>
                 </div>
