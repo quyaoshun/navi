@@ -33,5 +33,11 @@ var models = require('../models'),
             newBook.press = book.press
             newBook.releaseDate = book.releaseDate
             newBook.save(callback)
+        },
+        updateBookById: function(bookId, update, callback) {
+            Book.findByIdAndUpdate(bookId, updateBook, callback)
+        },
+        removeBookById: function(bookId, callback){
+            Book.findByIdAndRemove(bookId, callback)
         }
     }

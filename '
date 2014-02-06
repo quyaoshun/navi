@@ -96,7 +96,7 @@ var Book = require('../dao').Book,
         },
         removeBook: function(req, res, next) {
             var bookId = req.body.bookId.toString().trim()
-            Book.removeBookById(bookId, function(err, book) {
+            Book.findByIdAndRemove(bookId, function(err, book) {
                 if (err) {
                     return next(err)
                 }

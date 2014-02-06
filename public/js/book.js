@@ -29,25 +29,25 @@ $(function() {
         })
     })
     
-    DS.bookTable.delegate('.book-remove', function(){
-        var bookid = $(this).data("bookid")
+    DS.bookTable.delegate('.book-remove', 'click', function(){
+        var bookId = $(this).data("bookid")
         $.ajax({
             url: '/book/removebook',
             type: 'post',
             data:{
-                bookid: bookid
+                bookId: bookId
             },
             success: function(data){
                 alert(data)
             }
         })
-    }).delegate('.book-update', function(){
-        var bookid = $(this).data("bookid")
+    }).delegate('.book-update', 'click', function(){
+        var bookId = $(this).data("bookid")
         $.ajax({
             url: 'book/updatebook',
             type: 'post',
             data: {
-                bookid: bookid
+                bookId: bookId
             },
             success: function(data){
                 alert(data)
