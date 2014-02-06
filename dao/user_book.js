@@ -1,5 +1,6 @@
 var models = require('../models'),
-    UserBook = models.UserBook
+    UserBook = models.UserBook,
+    Book = models.Book
 
     module.exports = {
         getUserBooks: function(userId, callback) {
