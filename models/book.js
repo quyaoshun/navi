@@ -18,6 +18,9 @@ var mongoose = require('mongoose'),
         releaseDate: {
             type: Date
         },
+        tags: [{
+            type: String
+        }],
         createTime: {
             type: Date,
             default: Date.now
