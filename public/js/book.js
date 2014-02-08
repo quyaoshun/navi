@@ -42,12 +42,22 @@ $(function() {
             }
         })
     }).delegate('.book-update', 'click', function(){
-        var bookId = $(this).data("bookid")
+        var bookId = $(this).data("bookid"),
+            bookTitle = 'test1',
+            bookDesc = 'test1',
+            bookAuthor = 'test1',
+            bookPress = 'test1',
+            bookReleaseDate = '2014-02-08 21:16:26'
         $.ajax({
             url: 'book/updatebook',
             type: 'post',
             data: {
-                bookId: bookId
+                bookId: bookId,
+                bookTitle: bookTitle,
+                bookDesc: bookDesc,
+                bookAuthor: bookAuthor,
+                bookPress: bookPress,
+                bookReleaseDate: bookReleaseDate
             },
             success: function(data){
                 alert(data)
