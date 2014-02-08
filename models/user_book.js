@@ -1,17 +1,10 @@
 var mongoose = require('mongoose'),
+    Book = require('./book').Book,
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId,
     UserBookSchema = new Schema({
-        userId: {
-            type: ObjectId
-        },
-        bookId: [{
-            type: ObjectId
-        }],
-        addTime: {
-            type: Date,
-            default: Date.now
-        }
+        userId: ObjectId,
+        books: [Book]
     })
 
     mongoose.model('UserBook', UserBookSchema)
