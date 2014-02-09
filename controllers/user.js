@@ -1,5 +1,6 @@
 var User = require('../dao').User,
     validator = require('validator'),
+    Mail = require('../service/mail'),
     crypto = require('crypto')
     module.exports = {
         index: function(req, res, next) {
@@ -70,6 +71,7 @@ var User = require('../dao').User,
                     if (err) {
                         return next(err)
                     }
+                    Mail.sendActiveMail(email, md5(email + config.session_secret), name, email);
                     resJson.msg = '注册成功!'
                     return res.json(resJson)
                 })

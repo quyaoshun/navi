@@ -9,6 +9,8 @@ var user = require('./controllers/index').User,
         app.post('/user/login', user.login)
         app.get('/user/logout', user.logout)
 
+        app.get('/account/active', user.accountActive)
+
         app.get('/book', book.bookIndex)
         app.get('/book/all', book.getBooks)
         app.post('/book/addbook', book.addBook)
