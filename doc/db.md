@@ -16,14 +16,16 @@
 }
 ```
 
-表 user_books:
+表 user_books:(user,book关联表)
 
 ```
 {
   _id: ObjectId,
   userId: ObjectId,
-  bookId: ObjectId,
-  addTime: Date(Date.now)
+  books: [{
+    bookid: ObjectId,
+    addTime: Date(Date.now)
+  }]
 }
 ```
 
