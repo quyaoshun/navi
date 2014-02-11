@@ -1,7 +1,7 @@
 var path = require('path'),
     pkg = require('./package.json')
     module.exports = {
-        name: 'Book List',
+        name: pkg.name,
         version: pkg.version,
         db: 'mongodb://127.0.0.1/record_dev',
         session_secret: 'records',
@@ -12,7 +12,7 @@ var path = require('path'),
             host: 'smtp.163.com',
             port: 25,
             auth: {
-                user: 'dongdong910728@163.com',
-                pass: '939152381'
+                user: '**@*.com',
+                pass: '**'
             }
         }
