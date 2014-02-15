@@ -1,5 +1,6 @@
 var path = require('path'),
     pkg = require('./package.json')
+
     module.exports = {
         name: pkg.name,
         version: pkg.version,
@@ -7,7 +8,6 @@ var path = require('path'),
         session_secret: 'records',
         auth_cookie_name: 'records',
         host: 'localhost',
-        port: app.get('port'),
         mail_conf: {
             host: 'smtp.163.com',
             port: 25,
@@ -16,3 +16,4 @@ var path = require('path'),
                 pass: '**'
             }
         }
+    }

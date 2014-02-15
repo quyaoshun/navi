@@ -124,6 +124,9 @@ var User = require('../dao').User,
                 return res.json(resJson)
             }
         },
+        accountActive: function(req, res, next) {
+
+        },
         logout: function(req, res, next) {
             req.session.user = null
             res.redirect('/')

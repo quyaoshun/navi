@@ -37,7 +37,7 @@ var models = require('../models'),
         updateBookById: function(bookId, updateBook, callback) {
             Book.findByIdAndUpdate(bookId, updateBook, callback)
         },
-        removeBookById: function(bookId, callback){
+        removeBookById: function(bookId, callback) {
             Book.findByIdAndRemove(bookId, callback)
         }
     }
