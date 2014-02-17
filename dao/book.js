@@ -1,5 +1,7 @@
 var models = require('../models'),
-    Book = models.Book
+    User = models.User,
+    Book = models.Book,
+    UserBook = models.UserBook
 
     module.exports = {
         getBookList: function(query, opt, callback) {
@@ -15,10 +17,8 @@ var models = require('../models'),
                 }
             }, callback)
         },
-        getBookById: function(id, callback) {
-            Book.findOne({
-                _id: id
-            }, callback)
+        getBookByBookId: function(id, callback) {
+            Book.findById(id).exec(callback)
         },
         getBookByTitle: function(title, callback) {
             Book.find({
