@@ -13,7 +13,7 @@ var models = require('../models'),
                 userId: uid
             }, {
                 $push: {
-                    bookId: [bid]
+                    bookId: bid
                 }
             }, {
                 upsert: true
