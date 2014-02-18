@@ -15,6 +15,22 @@ var mongoose = require('mongoose'),
         press: {
             type: String
         },
+        tags: [{
+            type: String,
+            default: ''
+        }],
+        categories: {
+            type: String,
+            default: 'Uncategorized'
+        },
+        comments [
+            userId: {
+                type: ObjectId
+            },
+            content: {
+                type: String
+            }
+        ],
         releaseDate: {
             type: Date
         },
