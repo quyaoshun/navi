@@ -1,15 +1,16 @@
-## MongoDB数据库设计实现(4天)
+## 开发计划
+开发周期：三周
+
+### 产品设计及前端(第一周)
+1. 完成页面设计
+2. 学习RESTful API设计定义接口
+3. 学习AngularJS完成前端逻辑
+
+### 数据库设计及后端(第二周)
 1. 学习MongoDB 《MongoDB in Action》
 2. 编码实现Model和DAO
+3. 编码实现routes和Controllers业务
 
-## 设计RESTful API(3天)
-1. 学习RESTful API设计
-2. 编码实现routes和Controllers
-
-## UI优化(4天)
-1. 学习AngularJS
-2. 编码实现前端的MVC
-
-## 完善业务逻辑(3天)
-1. 完善相关业务实现
-2. 编写测试用例
+### 测试(第三周)
+1. 编写测试用例
+2. 修复Bugs
