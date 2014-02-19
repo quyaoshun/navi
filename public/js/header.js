@@ -1,5 +1,6 @@
 $(function() {
     var DS = {
+        navBarList: $('.navbar-nav'),
         login: $('#login'),
         loginInput: $('#login input'),
         inputUserName: $('#inputUserName'),
@@ -12,6 +13,11 @@ $(function() {
     },
         regEmail = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/
 
+    DS.navBarList.delegate('li', 'click', function(){
+        var _this = this
+        $(_this).siblings().removeClass('active')
+        $(_this).addClass('active')
+    })
     DS.loginInput.on('focus', function() {
         $(this).css({
             'opacity': 0.9,

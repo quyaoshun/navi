@@ -23,14 +23,14 @@ var mongoose = require('mongoose'),
             type: String,
             default: 'Uncategorized'
         },
-        comments [
+        comments: [{
             userId: {
                 type: ObjectId
             },
             content: {
                 type: String
             }
-        ],
+        }],
         releaseDate: {
             type: Date
         },
