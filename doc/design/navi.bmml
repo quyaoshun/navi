@@ -1,0 +1,308 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1775" measuredH="1260" mockupW="1512" mockupH="1149">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1071" y="111" w="704" h="492" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <markup>true</markup>
+        <text>Home%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::MenuBar" x="1078" y="186" w="691" h="29" measuredW="231" measuredH="29" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <selectedIndex>2</selectedIndex>
+        <text>Logo%2C%20Home%2C%20Books%2C%20Movies</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="263" y="126" w="698" h="477" measuredW="450" measuredH="400" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <markup>true</markup>
+        <text>Home%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::MenuBar" x="273" y="202" w="679" h="29" measuredW="231" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <selectedIndex>1</selectedIndex>
+        <text>Logo%2C%20Home%2C%20Books%2C%20Movies</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::LinkBar" x="851" y="207" w="-1" h="-1" measuredW="92" measuredH="19" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Signup%2C%20Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="278" y="245" w="628" h="313" measuredW="200" measuredH="152" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.75</backgroundAlpha>
+        <color>10066329</color>
+        <selectedIndex>0</selectedIndex>
+        <text>Books%0AMovies%0AOthers</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::FieldSet" x="502" y="274" w="367" h="120" measuredW="200" measuredH="170" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cantegories</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::FieldSet" x="354" y="273" w="136" h="257" measuredW="200" measuredH="170" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Group%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::FieldSet" x="502" y="403" w="367" h="128" measuredW="200" measuredH="170" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tags</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Image" x="391" y="296" w="-1" h="-1" measuredW="77" measuredH="79" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20Hot%20Book</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="1093" y="245" w="628" h="313" measuredW="200" measuredH="152" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.75</backgroundAlpha>
+        <color>10066329</color>
+        <selectedIndex>0</selectedIndex>
+        <text>Categorie%201%0ACategorie%202%0AOther</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::FieldSet" x="1358" y="260" w="159" h="154" measuredW="200" measuredH="170" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>BookCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Label" x="1380" y="368" w="105" h="-1" measuredW="100" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::IconLabel" x="1373" y="285" w="121" h="-1" measuredW="67" measuredH="63" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::FieldSet" x="1183" y="260" w="159" h="154" measuredW="200" measuredH="170" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>BookCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Label" x="1210" y="368" w="105" h="-1" measuredW="100" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::IconLabel" x="1203" y="285" w="121" h="-1" measuredW="67" measuredH="63" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::FieldSet" x="1547" y="260" w="159" h="154" measuredW="200" measuredH="170" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>BookCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Label" x="1569" y="368" w="105" h="-1" measuredW="100" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::IconLabel" x="1562" y="285" w="121" h="-1" measuredW="67" measuredH="63" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="273" y="779" w="698" h="477" measuredW="450" measuredH="400" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <markup>true</markup>
+        <text>Home%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::MenuBar" x="283" y="855" w="679" h="29" measuredW="231" measuredH="29" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <selectedIndex>1</selectedIndex>
+        <text>Logo%2C%20Home%2C%20Books%2C%20Movies</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="288" y="927" w="628" h="304" measuredW="200" measuredH="152" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.75</backgroundAlpha>
+        <color>10066329</color>
+        <selectedIndex>0</selectedIndex>
+        <text>Books%0AMovies%0AOthers</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::FieldSet" x="512" y="949" w="367" h="120" measuredW="200" measuredH="170" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cantegories</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::FieldSet" x="361" y="949" w="136" h="257" measuredW="200" measuredH="170" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Group%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::FieldSet" x="512" y="1080" w="367" h="128" measuredW="200" measuredH="170" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tags</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::Image" x="391" y="970" w="-1" h="-1" measuredW="77" measuredH="79" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%20Hot%20Book</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::TextInput" x="610" y="856" w="-1" h="-1" measuredW="92" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%20or%20Mail</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::TextInput" x="709" y="856" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Password</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::PointyButton" x="894" y="856" w="-1" h="-1" measuredW="51" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::MenuBar" x="283" y="890" w="679" h="29" measuredW="231" measuredH="29" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <selectedIndex>1</selectedIndex>
+        <text>Logo%2C%20Home%2C%20Books%2C%20Movies</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::TextInput" x="616" y="891" w="63" h="-1" measuredW="38" measuredH="27" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mail</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::TextInput" x="694" y="891" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Password</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::PointyButton" x="894" y="891" w="-1" h="-1" measuredW="61" measuredH="27" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Signup</text>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::TextInput" x="772" y="891" w="-1" h="-1" measuredW="116" measuredH="27" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Repeat%20Password</text>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::CheckBox" x="783" y="858" w="-1" h="-1" measuredW="107" measuredH="22" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Remember%20Me</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Link" x="1674" y="191" w="-1" h="-1" measuredW="68" measuredH="19" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>User%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1067" y="768" w="704" h="492" measuredW="450" measuredH="400" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <color>16777215</color>
+        <markup>true</markup>
+        <text>Home%20Page%0Ahttp%3A//navi/%3Auserid</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::MenuBar" x="1074" y="843" w="691" h="29" measuredW="231" measuredH="29" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <selectedIndex>2</selectedIndex>
+        <text>Logo%2C%20Home%2C%20Books%2C%20Movies</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="1253" y="902" w="464" h="313" measuredW="200" measuredH="152" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0.75</backgroundAlpha>
+        <color>10066329</color>
+        <position>right</position>
+        <selectedIndex>0</selectedIndex>
+        <text>Categorie%201%0ACategorie%202%0AOther</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::FieldSet" x="1268" y="917" w="159" h="154" measuredW="200" measuredH="170" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>BookCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Label" x="1290" y="1025" w="105" h="-1" measuredW="100" measuredH="21" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="77" controlTypeID="com.balsamiq.mockups::IconLabel" x="1283" y="942" w="121" h="-1" measuredW="67" measuredH="63" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::FieldSet" x="1455" y="917" w="159" h="154" measuredW="200" measuredH="170" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>BookCard</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::Label" x="1477" y="1025" w="105" h="-1" measuredW="100" measuredH="21" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::IconLabel" x="1470" y="942" w="121" h="-1" measuredW="67" measuredH="63" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Book%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="84" controlTypeID="com.balsamiq.mockups::Link" x="1670" y="848" w="-1" h="-1" measuredW="68" measuredH="19" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>User%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="85" controlTypeID="com.balsamiq.mockups::FieldSet" x="1093" y="902" w="135" h="229" measuredW="200" measuredH="170" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Group%20Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="89" controlTypeID="com.balsamiq.mockups::Webcam" x="1105" y="918" w="108" h="99" measuredW="177" measuredH="146" zOrder="48" locked="false" isInGroup="-1"/>
+    <control controlID="90" controlTypeID="com.balsamiq.mockups::Label" x="1099" y="1032" w="123" h="-1" measuredW="122" measuredH="21" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Personal%20Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::Label" x="1099" y="1069" w="123" h="-1" measuredW="122" measuredH="21" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <markup>true</markup>
+        <text>Personal%20Description</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
