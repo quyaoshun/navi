@@ -4,7 +4,7 @@ var path = require('path'),
     module.exports = {
         name: pkg.name,
         version: pkg.version,
-        db: 'mongodb://127.0.0.1/record_dev',
+        db: 'mongodb://127.0.0.1/navi',
         session_secret: 'navi',
         auth_cookie_name: 'navi',
         host: 'localhost',

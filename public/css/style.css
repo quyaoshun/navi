@@ -23,3 +23,7 @@ body {
 .reading-list tr td {
   text-align: center;
 }
+#content {
+  background-color: #ccc;
+  height: 800px;
+}
