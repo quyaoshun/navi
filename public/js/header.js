@@ -13,7 +13,7 @@ $(function() {
     },
         regEmail = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/
 
-    DS.navBarList.delegate('li', 'click', function(){
+    DS.navBarList.delegate('li', 'click', function() {
         var _this = this
         $(_this).siblings().removeClass('active')
         $(_this).addClass('active')
@@ -67,6 +67,10 @@ $(function() {
                 alert(data.msg)
             }
         })
+    })
+    $('#myTab a').click(function(e) {
+        e.preventDefault()
+        $(this).tab('show')
     })
 
     function inputCheck(input, reg) {
