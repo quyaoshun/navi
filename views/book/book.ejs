@@ -5,82 +5,68 @@
         <button class="btn btn-primary" data-toggle="modal" data-target="#book-add"><strong>添加</strong>
         </button>
 </ul>
-<content>
+<content ng-controller="BookListCtrl">
+    <p>共有图书：{{ books.length }} 本</p>
+    <div>查找：
+        <input type="search" ng-model="query" />
+        <p>查找图书：{{ query }}</p>
+    </div>
+    <div>排序：
+        <select ng-model="orderProp">
+            <option value="title">书名</option>
+            <option value="releaseDate">出版日期</option>
+        </select>
+        {{ orderProp }}
+        <p>查找图书：{{ query }}</p>
+    </div>
     <table class="table table-hover table-responsive reading-list">
         <tr>
-            <th><span class="badge">序号</span>
+            <th><span>序号</span>
             </th>
-            <th><span class="label label-success">书名</span>
+            <th><span>书名</span>
             </th>
-            <th><span class="label label-success">描述</span>
+            <th><span>描述</span>
             </th>
-            <th><span class="label label-warning">作者</span>
+            <th><span>作者</span>
             </th>
-            <th><span class="label label-warning">出版社</span>
+            <th><span>出版社</span>
             </th>
-            <th><span class="label label-info">标签</span>
+            <th><span>标签</span>
             </th>
-            <th><span class="label label-default">添加时间</span>
+            <th><span>添加时间</span>
             </th>
-            <th><span class="label label-primary">操作</span>
+            <th><span>操作</span>
             </th>
         </tr>
-        <!--
         <tbody id="book-table">
-        <% books.forEach(function(book,i){ %>
-        <tr>
-            <td><span class="badge"><%= i %></span>
-            </td>
-            <td><span class="label label-success"><%= book.title %></span>
-            </td>
-            <td><span class="label label-success"><%= book.desc %></span>
-            </td>
-            <td><span class="label label-warning"><%= book.author %></span>
-            </td>
-            <td><span class="label label-warning"><%= book.press %></span>
-            </td>
-            <td>
-                <span class="label label-info">JavaScript</span>
-                <span class="label label-info">前端开发</span>
-            </td>
-            <td><span class="label label-default"><%= book.releaseDate %></span>
-            </td>
-            <td>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="<%= book._id %>"><strong>修改</strong></button>
-                    <button type="button" class="btn btn-danger btn-sm book-remove" data-bookid="<%= book._id %>">删除</button>
-                </div>
-            </td>
-        </tr>
-        <% }) %>
-        -->
-        <tbody id="book-table" ng-controller="BookListCtrl">
-        <tr ng-repeat="book in books">
-            <td><span class="badge">{{ $index + 1}}</span>
-            </td>
-            <td><span class="label label-success">{{ book.title }}</span>
-            </td>
-            <td><span class="label label-success">{{ book.desc }}</span>
-            </td>
-            <td><span class="label label-warning">{{ book.author }}</span>
-            </td>
-            <td><span class="label label-warning">{{ book.press }}</span>
-            </td>
-            <td>
-                <span class="label label-info">JavaScript</span>
-                <span class="label label-info">前端开发</span>
-            </td>
-            <td><span class="label label-default">{{ book.releaseDate }}</span>
-            </td>
-            <td>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="{{ book._id }}"><strong>修改</strong></button>
-                    <button type="button" class="btn btn-danger btn-sm book-remove" data-bookid="{{ book._id }}">删除</button>
-                </div>
-            </td>
-        </tr>
+            <tr ng-repeat="book in books | filter: query | orderBy: orderProp">
+                <td><span class="badge">{{ $index + 1}}</span>
+                </td>
+                <td><span>{{ book.title }}</span>
+                </td>
+                <td><span>{{ book.desc }}</span>
+                </td>
+                <td><span>{{ book.author }}</span>
+                </td>
+                <td><span>{{ book.press }}</span>
+                </td>
+                <td>
+                    <span class="label label-info">tags</span>
+                    <span class="label label-info">tags</span>
+                </td>
+                <td><span>{{ book.releaseDate }}</span>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="{{ book._id }}"><strong>修改</strong>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm book-remove" data-bookid="{{ book._id }}">删除</button>
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
+    {{ books | json }}
 </content>
 
 <ul class="pagination pull-right">

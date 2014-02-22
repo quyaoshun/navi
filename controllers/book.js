@@ -22,7 +22,7 @@ var Book = require('../dao').Book,
                     next(err)
                 }
                 return res.json({
-                    booklist: books
+                    books: books
                 })
                 next()
             })

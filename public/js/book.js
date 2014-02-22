@@ -1,6 +1,6 @@
-function BookListCtrl($scope) {
-    $scope.books = [{
-        "releaseDate": "2014-02-08T13:16:26.000Z",
+function BookListCtrl($scope, $http) {
+    /* $scope.books = [{
+        "releaseDate": "2014-03-08T13:16:26.000Z",
         "press": "test0",
         "author": "test0",
         "desc": "test0",
@@ -25,8 +25,15 @@ function BookListCtrl($scope) {
         "comments": [],
         "categories": "Uncategorized",
         "tags": []
-    }]
+    }] */
+    $http.get('books/list').success(function(data) {
+        $scope.books = data.books
+    })
+    $scope.orderProp = 'title'
 }
+
+BookListCtrl.$inject = ['$scope', '$http']
+
 $(function() {
     DS = {
         bookTitle: $('#book-title'),
