@@ -25,6 +25,7 @@
             <th><span class="label label-primary">操作</span>
             </th>
         </tr>
+        <!--
         <tbody id="book-table">
         <% books.forEach(function(book,i){ %>
         <tr>
@@ -52,6 +53,32 @@
             </td>
         </tr>
         <% }) %>
+        -->
+        <tbody id="book-table" ng-controller="BookListCtrl">
+        <tr ng-repeat="book in books">
+            <td><span class="badge">{{ $index + 1}}</span>
+            </td>
+            <td><span class="label label-success">{{ book.title }}</span>
+            </td>
+            <td><span class="label label-success">{{ book.desc }}</span>
+            </td>
+            <td><span class="label label-warning">{{ book.author }}</span>
+            </td>
+            <td><span class="label label-warning">{{ book.press }}</span>
+            </td>
+            <td>
+                <span class="label label-info">JavaScript</span>
+                <span class="label label-info">前端开发</span>
+            </td>
+            <td><span class="label label-default">{{ book.releaseDate }}</span>
+            </td>
+            <td>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="{{ book._id }}"><strong>修改</strong></button>
+                    <button type="button" class="btn btn-danger btn-sm book-remove" data-bookid="{{ book._id }}">删除</button>
+                </div>
+            </td>
+        </tr>
         </tbody>
     </table>
 </content>
@@ -73,7 +100,7 @@
     </li>
 </ul>
 
-<div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+<div class="modal fade" id="book-add" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -115,7 +142,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" id="booksubmit" class="btn btn-primary">提交</button>
+                <button type="button" id="book-submit" class="btn btn-primary">提交</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
             </div>
         </div>

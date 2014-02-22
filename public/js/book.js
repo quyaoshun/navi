@@ -1,3 +1,32 @@
+function BookListCtrl($scope) {
+    $scope.books = [{
+        "releaseDate": "2014-02-08T13:16:26.000Z",
+        "press": "test0",
+        "author": "test0",
+        "desc": "test0",
+        "title": "test0",
+        "_id": "5308bae92b065f4316c91688",
+        "__v": 0,
+        "updateTime": "2014-02-22T14:57:45.052Z",
+        "createTime": "2014-02-22T14:57:45.051Z",
+        "comments": [],
+        "categories": "Uncategorized",
+        "tags": []
+    }, {
+        "releaseDate": "2014-02-22T14:57:19.000Z",
+        "press": "test2",
+        "author": "test2",
+        "desc": "test2",
+        "title": "test2",
+        "_id": "5308bafe2b065f4316c91689",
+        "__v": 0,
+        "updateTime": "2014-02-22T14:58:06.238Z",
+        "createTime": "2014-02-22T14:58:06.238Z",
+        "comments": [],
+        "categories": "Uncategorized",
+        "tags": []
+    }]
+}
 $(function() {
     DS = {
         bookTitle: $('#book-title'),
@@ -8,10 +37,11 @@ $(function() {
         bookSubmit: $('#book-submit'),
         bookTable: $('#book-table')
     }
+
     DS.bookSubmit.on('click', function(e) {
         e.preventDefault()
         $.ajax({
-            url: '/book/addbook',
+            url: '/book/add',
             type: 'post',
             data: {
                 bookTitle: DS.bookTitle.val().trim(),
@@ -20,7 +50,7 @@ $(function() {
                 bookPress: DS.bookPress.val().trim(),
                 bookReleaseDate: DS.bookReleaseDate.val().trim()
             },
-            success: function(data){
+            success: function(data) {
                 alert(data)
                 if (data.code === 200) {
                     $('#addBook').modal('toggle')
@@ -28,29 +58,29 @@ $(function() {
             }
         })
     })
-    
-    DS.bookTable.delegate('.book-remove', 'click', function(){
+
+    DS.bookTable.delegate('.book-remove', 'click', function() {
         var bookId = $(this).data("bookid")
         $.ajax({
-            url: '/book/removebook',
+            url: '/book/remove',
             type: 'post',
-            data:{
+            data: {
                 bookId: bookId
             },
-            success: function(data){
+            success: function(data) {
                 alert(data)
             }
         })
-    }).delegate('.book-update', 'click', function(){
+    }).delegate('.book-update', 'click', function() {
         var bookId = $(this).data("bookid"),
-            bookTitle = 'test1',
-            bookDesc = 'test1',
-            bookAuthor = 'test1',
-            bookPress = 'test1',
+            bookTitle = 'test0',
+            bookDesc = 'test0',
+            bookAuthor = 'test0',
+            bookPress = 'test0',
             bookReleaseDate = '2014-02-08 21:16:26'
         $.ajax({
-            url: 'book/updatebook',
-            type: 'post',
+            url: 'book/bookid',
+            type: 'put',
             data: {
                 bookId: bookId,
                 bookTitle: bookTitle,
@@ -59,7 +89,7 @@ $(function() {
                 bookPress: bookPress,
                 bookReleaseDate: bookReleaseDate
             },
-            success: function(data){
+            success: function(data) {
                 alert(data)
             }
         })
