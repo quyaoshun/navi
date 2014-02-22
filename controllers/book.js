@@ -71,7 +71,7 @@ var Book = require('../dao').Book,
             })
         },
         updateBook: function(req, res, next) {
-            var bookId = req.body.bookId.toString().trim(),
+            var bookId = req.params.bookid,
                 bookTitle = req.body.bookTitle.toString().trim(),
                 bookDesc = req.body.bookDesc.toString().trim(),
                 bookAuthor = req.body.bookAuthor.toString().trim(),
@@ -84,18 +84,34 @@ var Book = require('../dao').Book,
                     press: bookPress,
                     releaseDate: bookReleaseDate
                 }
-            Book.updateBookById(bookId, updateBook, function(err, book) {
+            Book.getBookByTitle(bookTitle, function(err, books) {
                 if (err) {
                     return next(err)
                 }
-                return res.json({
-                    updateBook: book
+                if (books.length > 0) {
+                    resJson.msg = "同样书名已被添加！"
+                    return res.json(resJson)
+                }
+                var newBook = {
+                    title: bookTitle,
+                    desc: bookDesc,
+                    author: bookAuthor,
+                    press: bookPress,
+                    releaseDate: bookReleaseDate
+                }
+                Book.updateBookById(bookId, updateBook, function(err, book) {
+                    if (err) {
+                        return next(err)
+                    }
+                    return res.json({
+                        updateBook: book
+                    })
+                    next()
                 })
-                next()
             })
         },
         removeBook: function(req, res, next) {
-            var bookId = req.body.bookId.toString().trim()
+            var bookId = req.params.bookid
             Book.removeBookById(bookId, function(err, book) {
                 if (err) {
                     return next(err)

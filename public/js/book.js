@@ -48,8 +48,8 @@ $(function() {
     DS.bookSubmit.on('click', function(e) {
         e.preventDefault()
         $.ajax({
-            url: '/book/add',
-            type: 'post',
+            url: '/books',
+            type: 'POST',
             data: {
                 bookTitle: DS.bookTitle.val().trim(),
                 bookDesc: DS.bookDesc.val().trim(),
@@ -69,11 +69,8 @@ $(function() {
     DS.bookTable.delegate('.book-remove', 'click', function() {
         var bookId = $(this).data("bookid")
         $.ajax({
-            url: '/book/remove',
-            type: 'post',
-            data: {
-                bookId: bookId
-            },
+            url: '/books/' + bookId,
+            type: 'DELETE',
             success: function(data) {
                 alert(data)
             }
@@ -86,10 +83,9 @@ $(function() {
             bookPress = 'test0',
             bookReleaseDate = '2014-02-08 21:16:26'
         $.ajax({
-            url: 'book/bookid',
+            url: 'books/' + bookId,
             type: 'put',
             data: {
-                bookId: bookId,
                 bookTitle: bookTitle,
                 bookDesc: bookDesc,
                 bookAuthor: bookAuthor,
