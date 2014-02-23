@@ -2,7 +2,7 @@
 
 <h1>{{ book.title }}</h1>
 <p>{{ book.desc }}</p>
-
+<p>{{ book._id | checkmark }}</p>
 <ul class="specs">
     <li>
         <span>属性</span>
@@ -21,9 +21,19 @@
     </li>
     <li>
         <span>出版日期</span>
-        <dd>{{ book.releaseDate }}</dd>
+        <dd>{{ book.releaseDate | date:"yyyy-MM-dd" }}</dd>
     </li>
 </ul>
+
+<button ng-click="hello('Daniel')">Hello</button>
+{{ "lower cap string" | uppercase }}
+<br>
+{{ {foo: "bar", baz: 23} | json }}
+<br>
+{{ 1304375948024 | date }}
+<br>
+{{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}
+
 <!--
 {
     "_id": "5308bae92b065f4316c91688",

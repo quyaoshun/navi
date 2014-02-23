@@ -1,4 +1,4 @@
-var naviApp = angular.module('naviApp', ['ngRoute', 'BookControllers'])
+var naviApp = angular.module('naviApp', ['ngRoute', 'BookControllers', 'bookFilters'])
 
 naviApp.config(['$routeProvider',
     function($routeProvider) {

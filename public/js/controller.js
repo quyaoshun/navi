@@ -27,6 +27,9 @@ BookControllers.controller('BookDetailCtrl', ['$scope', '$routeParams', '$http',
         $http.get('/api/books/' + $routeParams.bookId).success(function(data){
             $scope.book = data
             console.log($scope.book)
+            $scope.hello = function(name){
+                alert('hello' + (name || 'world') + '!')
+            }
         })
     }
 ])

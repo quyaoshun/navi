@@ -30,8 +30,7 @@
             <span>{{ book.desc }}</span>
             <span>{{ book.author }}</span>
             <span>{{ book.press }}</span>
-            <span class="label label-info">tags</span>
-            <span class="label label-info">tags</span>
+            <span ng-repeat="tag in book.tags" class="label label-info">{{ tag }}</span>
             <span>{{ book.releaseDate }}</span>
             <div class="btn-group">
                 <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="{{ book._id }}"><strong>修改</strong>
