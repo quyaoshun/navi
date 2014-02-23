@@ -1,4 +1,4 @@
-var naviApp = angular.module('naviApp', ['ngRoute', 'BookControllers', 'bookFilters'])
+var naviApp = angular.module('naviApp', ['ngRoute', 'bookControllers', 'bookFilters', 'bookServices'])
 
 naviApp.config(['$routeProvider',
     function($routeProvider) {
@@ -9,7 +9,7 @@ naviApp.config(['$routeProvider',
             templateUrl: 'partials/book_detail.html',
             controller: 'BookDetailCtrl'
         }).otherwise({
-            redirectTo: 'books'
+            redirectTo: '/books'
         })
     }
 ])

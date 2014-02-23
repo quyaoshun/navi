@@ -19,10 +19,11 @@
   "dependencies": {
     "angular": "~1.2.13",
     "bootstrap": "~3.1.1",
-    "jquery": "~2.0.3",
+    "jquery": "~1.11.0",
     "sizzle": "1.10.16",
     "masonry": "~3.1.4",
     "angular-route": "~1.2.13",
-    "angular-resource": "~1.2.13"
+    "angular-resource": "~1.2.13",
+    "angular-animate": "~1.2.13"
   }
 }

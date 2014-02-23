@@ -11,7 +11,7 @@ var user = require('./controllers/index').User,
 
         app.get('/account/active', user.accountActive)
 
-        app.get('/api/books', book.bookIndex)
+        app.get('/api/books', book.getBooks)
         app.get('/api/books/list', book.getBooks)
         app.get('/api/books/:bookId', book.getBook)
         app.post('/api/books', book.addBook)

@@ -4,13 +4,13 @@ var User = require('../dao').User,
     crypto = require('crypto')
     module.exports = {
         index: function(req, res, next) {
-            return res.render('index', {
+            return res.render('index.html', {
                 title: '主页'
             })
             next()
         },
         getSignUp: function(req, res, next) {
-            return res.render('user/signup', {
+            return res.render('user/signup.html', {
                 title: '注册'
             })
             next()
@@ -76,7 +76,7 @@ var User = require('../dao').User,
             })
         },
         getLogin: function(req, res, next) {
-            return res.render('user/login', {
+            return res.render('user/login.html', {
                 title: '登录'
             })
             next()
