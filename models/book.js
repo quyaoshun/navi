@@ -6,6 +6,9 @@ var mongoose = require('mongoose'),
         title: {
             type: String
         },
+        imgUrl: {
+            type: String
+        },
         desc: {
             type: String
         },

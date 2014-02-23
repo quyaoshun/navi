@@ -11,10 +11,10 @@ var user = require('./controllers/index').User,
 
         app.get('/account/active', user.accountActive)
 
-        app.get('/books', book.bookIndex)
-        app.get('/books/list', book.getBooks)
-        app.get('/books/:bookid', book.bookIndex)
-        app.post('/books', book.addBook)
-        app.put('/books/:bookid', book.updateBook)
-        app.delete('/books/:bookid', book.removeBook)
+        app.get('/api/books', book.bookIndex)
+        app.get('/api/books/list', book.getBooks)
+        app.get('/api/books/:bookid', book.bookIndex)
+        app.post('/api/books', book.addBook)
+        app.put('/api/books/:bookid', book.updateBook)
+        app.delete('/api/books/:bookid', book.removeBook)
     }

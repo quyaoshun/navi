@@ -21,6 +21,7 @@
     "bootstrap": "~3.1.1",
     "jquery": "~2.0.3",
     "sizzle": "1.10.16",
-    "masonry": "~3.1.4"
+    "masonry": "~3.1.4",
+    "angular-route": "~1.2.13"
   }
 }

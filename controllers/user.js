@@ -5,15 +5,13 @@ var User = require('../dao').User,
     module.exports = {
         index: function(req, res, next) {
             return res.render('index', {
-                title: '主页',
-                layout: 'layout'
+                title: '主页'
             })
             next()
         },
         getSignUp: function(req, res, next) {
             return res.render('user/signup', {
-                title: '注册',
-                layout: 'layout'
+                title: '注册'
             })
             next()
         },
@@ -79,8 +77,7 @@ var User = require('../dao').User,
         },
         getLogin: function(req, res, next) {
             return res.render('user/login', {
-                title: '登录',
-                layout: 'layout'
+                title: '登录'
             })
             next()
         },

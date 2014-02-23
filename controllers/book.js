@@ -8,11 +8,7 @@ var Book = require('../dao').Book,
                 if (err) {
                     next(err)
                 }
-                return res.render('book/book', {
-                    title: '书单',
-                    books: books,
-                    layout: 'layout'
-                })
+                return res.json({books: books})
                 next()
             })
         },
@@ -77,6 +73,17 @@ var Book = require('../dao').Book,
                 bookAuthor = req.body.bookAuthor.toString().trim(),
                 bookPress = req.body.bookPress.toString().trim(),
                 bookReleaseDate = req.body.bookReleaseDate.toString().trim(),
+                resJson = {
+                    code: 400,
+                    msg: 'example',
+                    bookInfo: {
+                        title: bookTitle,
+                        desc: bookDesc,
+                        author: bookAuthor,
+                        press: bookPress,
+                        releaseDate: bookReleaseDate
+                    }
+                },
                 updateBook = {
                     title: bookTitle,
                     desc: bookDesc,
@@ -103,9 +110,8 @@ var Book = require('../dao').Book,
                     if (err) {
                         return next(err)
                     }
-                    return res.json({
-                        updateBook: book
-                    })
+                    resJson["bookInfo"] = book
+                    return res.json(resJson)
                     next()
                 })
             })
