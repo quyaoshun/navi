@@ -13,8 +13,8 @@ var user = require('./controllers/index').User,
 
         app.get('/api/books', book.bookIndex)
         app.get('/api/books/list', book.getBooks)
-        app.get('/api/books/:bookid', book.bookIndex)
+        app.get('/api/books/:bookId', book.getBook)
         app.post('/api/books', book.addBook)
-        app.put('/api/books/:bookid', book.updateBook)
-        app.delete('/api/books/:bookid', book.removeBook)
+        app.put('/api/books/:bookId', book.updateBook)
+        app.delete('/api/books/:bookId', book.removeBook)
     }

@@ -8,7 +8,9 @@ var Book = require('../dao').Book,
                 if (err) {
                     next(err)
                 }
-                return res.json({books: books})
+                return res.json({
+                    books: books
+                })
                 next()
             })
         },
@@ -22,6 +24,14 @@ var Book = require('../dao').Book,
                 })
                 next()
             })
+        },
+        getBook: function(req, res, next) {
+            Book.getBookByBookId(req.params.bookId, function(err, book){
+                 if (err) {
+                     next(err)
+                 }
+                 return res.json(book)
+            }) 
         },
         addBook: function(req, res, next) {
             var bookTitle = req.body.bookTitle.toString().trim(),
@@ -67,7 +77,7 @@ var Book = require('../dao').Book,
             })
         },
         updateBook: function(req, res, next) {
-            var bookId = req.params.bookid,
+            var bookId = req.params.bookId,
                 bookTitle = req.body.bookTitle.toString().trim(),
                 bookDesc = req.body.bookDesc.toString().trim(),
                 bookAuthor = req.body.bookAuthor.toString().trim(),
@@ -117,7 +127,7 @@ var Book = require('../dao').Book,
             })
         },
         removeBook: function(req, res, next) {
-            var bookId = req.params.bookid
+            var bookId = req.params.bookId
             Book.removeBookById(bookId, function(err, book) {
                 if (err) {
                     return next(err)

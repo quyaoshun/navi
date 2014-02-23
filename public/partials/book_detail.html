@@ -1,1 +1,42 @@
-details for {{ bookid }}
+<img ng-src="{{ book.imgUrl }}" />
+
+<h1>{{ book.title }}</h1>
+<p>{{ book.desc }}</p>
+
+<ul class="specs">
+    <li>
+        <span>属性</span>
+        <dl>
+            <dt>Tags</dt>
+            <dd ng-repeat="tag in book.tags">{{ tag }}</dd>
+        </dl>
+    </li>
+    <li>
+        <span>出版作者</span>
+        <dd>{{ book.author }}</dd>
+    </li>
+    <li>
+        <span>出版社</span>
+        <dd>{{ book.press }}</dd>
+    </li>
+    <li>
+        <span>出版日期</span>
+        <dd>{{ book.releaseDate }}</dd>
+    </li>
+</ul>
+<!--
+{
+    "_id": "5308bae92b065f4316c91688",
+    "author": "test0",
+    "desc": "test0",
+    "imgUrl": "imgs/goodparts.jpg",
+    "press": "test0",
+    "releaseDate": "2014-02-08T13:16:26.000Z",
+    "title": "test0",
+    "updateTime": "2014-02-23T10:36:05.293Z",
+    "createTime": "2014-02-23T10:36:05.293Z",
+    "comments": [],
+    "categories": "Uncategorized",
+    "tags": []
+}
+-->

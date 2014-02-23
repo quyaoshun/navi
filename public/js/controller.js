@@ -22,8 +22,11 @@ BookControllers.controller('BookListCtrl', ['$scope', '$http',
     }
 ])
 
-BookControllers.controller('BookDetailCtrl', ['$scope', '$routeParams',
-    function($scope, $routeParams) {
-        $scope.bookid = $routeParams.bookid
+BookControllers.controller('BookDetailCtrl', ['$scope', '$routeParams', '$http',
+    function($scope, $routeParams, $http) {
+        $http.get('/api/books/' + $routeParams.bookId).success(function(data){
+            $scope.book = data
+            console.log($scope.book)
+        })
     }
 ])

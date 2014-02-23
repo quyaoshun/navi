@@ -5,7 +5,7 @@ naviApp.config(['$routeProvider',
         $routeProvider.when('/books', {
             templateUrl: 'partials/book_list.html',
             controller: 'BookListCtrl'
-        }).when('/books/:bookid', {
+        }).when('/books/:bookId', {
             templateUrl: 'partials/book_detail.html',
             controller: 'BookDetailCtrl'
         }).otherwise({
