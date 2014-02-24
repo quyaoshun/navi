@@ -8,6 +8,10 @@ naviControllers.controller('HeaderCtrl', ["$scope", "$location",
     }
 ])
 
+naviControllers.controller('HomeContentCtrl', ["$scope",
+    function($scope) {}
+])
+
 naviControllers.controller('BookListCtrl', ['$scope', 'Book',
     function($scope, Book) {
         $scope.books = Book.query()
