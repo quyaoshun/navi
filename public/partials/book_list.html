@@ -1,44 +1,45 @@
-<content ng-controller="BookListCtrl">
-    <ul class="nav nav-tabs">
-        <li>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#book-add"><strong>添加</strong>
-            </button>
-        </li>
-        <li>
-            <p>共有图书：{{ books.length }} 本</p>
-        </li>
-        <li>查找：
-            <input type="search" ng-model="query" />
-            <p>查找图书：{{ query }}</p>
-        </li>
-        <li>排序：
-            <select ng-model="orderProp">
-                <option value="title">书名</option>
-                <option value="releaseDate">出版日期</option>
-            </select>
-            {{ orderProp }}
-            <p>查找图书：{{ query }}</p>
-        </li>
-    </ul>
-    <ul id="book-table">
-        <li ng-repeat="book in books | filter: query | orderBy: orderProp" class="thumbnail book-listing">
-            <span class="badge">{{ $index + 1}}</span>
-            <a href="#/books/{{ book._id }}" class="thumb">
-                <img ng-src="{{ book.imgUrl }}" />
-            </a>
-            <a href="#/books/{{ book._id }}">{{ book.title }}</a>
-            <span>{{ book.desc }}</span>
-            <span>{{ book.author }}</span>
-            <span>{{ book.press }}</span>
-            <span ng-repeat="tag in book.tags" class="label label-info">{{ tag }}</span>
-            <span>{{ book.releaseDate }}</span>
-            <div class="btn-group">
-                <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="{{ book._id }}"><strong>修改</strong>
-                </button>
-                <button type="button" class="btn btn-danger btn-sm book-remove" data-bookid="{{ book._id }}">删除</button>
+<content class="container-fluid" ng-controller="BookListCtrl">
+    <div class="row">
+        <div class="col-xs-1 col-md-1"></div>
+        <div class="col-xs-11 col-md-8 books">
+            <div ng-repeat="book in books | filter: query | orderBy: orderProp" class="thumbnail book-listing">
+                <a href="#/books/{{ book._id }}" class="thumb">
+                    <img ng-src="{{ book.imgUrl }}" />
+                </a>
+                <a href="#/books/{{ book._id }}">{{ book.title }}</a>
+                <span>{{ book.desc }}</span>
+                <span>{{ book.author }}</span>
+                <span ng-repeat="tag in book.tags" class="label label-info">{{ tag }}</span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-sm book-update" data-toggle="modal" data-target="#addBook" data-bookid="{{ book._id }}">
+                        <strong>修改</strong>
+                    </button>
+                    <button type="button" class="btn btn-danger btn-sm book-remove" data-bookid="{{ book._id }}">删除</button>
+                </div>
             </div>
-        </li>
-    </ul>
+        </div>
+
+        <ul class="col-xs-6 col-md-3 books-nav">
+            <li>
+                <button class="btn btn-primary" data-toggle="modal" data-target="#book-add"><strong>添加</strong>
+                </button>
+            </li>
+            <li>
+                <p>共有图书：{{ books.length }} 本</p>
+            </li>
+            <li>查找：
+                <input class="" type="text" ng-model="query" />
+                <p>查找图书：{{ query }}</p>
+            </li>
+            <li>排序：
+                <select ng-model="orderProp">
+                    <option value="title">书名</option>
+                    <option value="releaseDate">出版日期</option>
+                </select>
+                {{ orderProp }}
+            </li>
+        </ul>
+    </div>
     <!-- {{ books | json }} -->
 </content>
 

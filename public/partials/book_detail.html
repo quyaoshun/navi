@@ -1,5 +1,6 @@
-<img ng-src="{{ book.imgUrl }}" />
-
+<div class="book-image">
+    <img ng-src="{{ book.imgUrl }}" />
+</div>
 <h1>{{ book.title }}</h1>
 <p>{{ book.desc }}</p>
 <p>{{ book._id | checkmark }}</p>
@@ -24,29 +25,3 @@
         <dd>{{ book.releaseDate | date:"yyyy-MM-dd" }}</dd>
     </li>
 </ul>
-
-<button ng-click="hello('Daniel')">Hello</button>
-{{ "lower cap string" | uppercase }}
-<br>
-{{ {foo: "bar", baz: 23} | json }}
-<br>
-{{ 1304375948024 | date }}
-<br>
-{{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}
-
-<!--
-{
-    "_id": "5308bae92b065f4316c91688",
-    "author": "test0",
-    "desc": "test0",
-    "imgUrl": "imgs/goodparts.jpg",
-    "press": "test0",
-    "releaseDate": "2014-02-08T13:16:26.000Z",
-    "title": "test0",
-    "updateTime": "2014-02-23T10:36:05.293Z",
-    "createTime": "2014-02-23T10:36:05.293Z",
-    "comments": [],
-    "categories": "Uncategorized",
-    "tags": []
-}
--->
