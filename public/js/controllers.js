@@ -9,7 +9,9 @@ naviControllers.controller('HeaderCtrl', ["$scope", "$location",
 ])
 
 naviControllers.controller('HomeContentCtrl', ["$scope",
-    function($scope) {}
+    function($scope) {
+        alert(1)
+    }
 ])
 
 naviControllers.controller('BookListCtrl', ['$scope', 'Book',
