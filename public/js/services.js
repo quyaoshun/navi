@@ -6,6 +6,9 @@ bookServices.factory('Book', ['$resource',
             query: {
                 method: 'GET',
                 isArray: true
+            },
+            update: {
+                method: 'PUT'
             }
         })
     }

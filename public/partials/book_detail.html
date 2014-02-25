@@ -3,7 +3,9 @@
 </div>
 <h1>{{ book.title }}</h1>
 <p>{{ book.desc }}</p>
-<p>{{ book._id | checkmark }}</p>
+<button type="button" class="btn btn-primary btn-sm" ng-click="open()" data-bookid="{{ book._id }}">
+    <strong>修改</strong>
+</button>
 <ul class="specs">
     <li>
         <span>属性</span>
@@ -25,3 +27,54 @@
         <dd>{{ book.releaseDate | date:"yyyy-MM-dd" }}</dd>
     </li>
 </ul>
+
+<script type="text/ng-template" id="update_book.html">
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <h4 class="modal-title" id="modal-label">更新图书信息</h4>
+</div>
+<div class="modal-body">
+    <div class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="book-title" class="col-sm-2 control-label">书名</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" value="{{ book.title }}" placeholder="Book Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="book-desc" class="col-sm-2 control-label">描述</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" value="{{ book.desc }}" placeholder="Book Description">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="book-author" class="col-sm-2 control-label">作者</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" value="{{ book.author }}" placeholder="Book Author">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="book-desc" class="col-sm-2 control-label">标签</label>
+            <div class="col-sm-9">
+                <span ng-repeat="tag in book.tags">{{ tag }}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="book-press" class="col-sm-2 control-label">出版社</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" value="{{ book.press }}" placeholder="Book Press">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="book-releasedate" class="col-sm-2 control-label">出版日期</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" value="{{ book.releaseDate | date:'yyyy-MM-dd' }}" placeholder="Book Release Date">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="ok()">提交</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+</div>
+</script>
