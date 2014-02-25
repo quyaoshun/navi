@@ -24,6 +24,7 @@
     "masonry": "~3.1.4",
     "angular-route": "~1.2.13",
     "angular-resource": "~1.2.13",
-    "angular-animate": "~1.2.13"
+    "angular-animate": "~1.2.13",
+    "angular-bootstrap": "~0.10.0"
   }
 }

@@ -7,7 +7,8 @@ var mongoose = require('mongoose'),
             type: String
         },
         imgUrl: {
-            type: String
+            type: String,
+            default: 'imgs/book_default.jpg'
         },
         desc: {
             type: String
