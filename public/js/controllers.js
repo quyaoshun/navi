@@ -25,7 +25,7 @@ naviControllers.controller('BookListCtrl', [
                 templateUrl: 'add_book.html',
                 controller: 'ModalInstanceCtrl',
                 resolve: {
-                    book: function(){
+                    book: function() {
                         return $scope.book
                     }
                 }
@@ -51,30 +51,58 @@ naviControllers.controller('BookDetailCtrl', [
                 templateUrl: 'update_book.html',
                 controller: 'ModalInstanceCtrl',
                 resolve: {
-                    book: function(){
+                    book: function() {
                         return $scope.book
                     }
                 }
             })
             modalInstance.result.then(function() {
-                // $scope.bookItem = bookItem
+                // $scope.book = book
             }, function() {
                 $log.info('Modal dismissed at: ' + new Date())
             })
         }
 
+        $scope.openRemove = function() {
+            var modalInstance = $modal.open({
+                templateUrl: 'remove_book.html',
+                controller: 'ModalInstanceCtrl',
+                resolve: {
+                    book: function() {
+                        return $scope.book
+                    }
+                }
+            })
+            modalInstance.result.then(function() {
+                // $scope.book = book
+            }, function() {
+                $log.info('Modal dismissed at: ' + new Date())
+            })
+        }
     }
 ])
 
 naviControllers.controller('ModalInstanceCtrl', [
-    '$scope', '$modalInstance', 'book',
-    function($scope, $modalInstance, book) {
+    '$scope', 'Book', '$modalInstance', 'book',
+    function($scope, Book, $modalInstance, book) {
         $scope.book = book
         $scope.ok = function() {
             $modalInstance.close($scope.book)
         }
         $scope.cancel = function() {
             $modalInstance.dismiss('cancel')
+        }
+        $scope.update = function() {
+            $modalInstance.close($scope.book)
+            Book.update({
+                bookId: $scope.book._id
+            }, $scope.book)
+            console.log($scope.book)
+        }
+        $scope.remove = function() {
+            var removeBook = new Book(book)
+            removebook.remove()
+            $modalInstance.close($scope.book)
         }
     }
 ])

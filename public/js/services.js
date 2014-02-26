@@ -7,8 +7,14 @@ bookServices.factory('Book', ['$resource',
                 method: 'GET',
                 isArray: true
             },
+            save: {
+                method: 'POST'
+            },
             update: {
                 method: 'PUT'
+            },
+            remove: {
+                method: 'DELETE'
             }
         })
     }

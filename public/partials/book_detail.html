@@ -6,7 +6,11 @@
 <button type="button" class="btn btn-primary btn-sm" ng-click="open()" data-bookid="{{ book._id }}">
     <strong>修改</strong>
 </button>
-<ul class="specs">
+<button type="button" class="btn btn-danger btn-sm" ng-click="openRemove()" data-bookid="{{ book._id }}">
+    <strong>删除</strong>
+</button>
+
+<ul>
     <li>
         <span>属性</span>
         <dl>
@@ -38,7 +42,7 @@
         <div class="form-group">
             <label for="book-title" class="col-sm-2 control-label">书名</label>
             <div class="col-sm-9">
-                <input type="text" class="form-control" value="{{ book.title }}" placeholder="Book Name">
+                <input type="text" class="form-control" value="{{ book.title }}" placeholder="Book Name" required>
             </div>
         </div>
         <div class="form-group">
@@ -74,7 +78,20 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button type="button" class="btn btn-primary" ng-click="ok()">提交</button>
-    <button type="button" class="btn btn-default" ng-click="cancel()">关闭</button>
+    <button type="button" class="btn btn-primary" ng-click="update()">更新</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
+</div>
+</script>
+<script type="text/ng-template" id="remove_book.html">
+<div class="modal-header">
+    <button type="button" class="close" ng-click="cancel()">&times;</button>
+    <h4 class="modal-title" id="modal-label">删除图书</h4>
+</div>
+<div class="modal-body">
+    <center><h3>确定要删除{{ book.title }}这本书吗？</h3></center>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="update()">删除</button>
+    <button type="button" class="btn btn-default" ng-click="cancel()">取消</button>
 </div>
 </script>

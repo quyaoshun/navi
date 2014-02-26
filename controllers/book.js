@@ -29,25 +29,25 @@ var Book = require('../dao').Book,
                 return res.json(book)
             })
         },
-        addBook: function(req, res, next) {
-            var bookTitle = req.body.bookTitle.toString().trim(),
-                bookDesc = req.body.bookDesc.toString().trim(),
-                bookAuthor = req.body.bookAuthor.toString().trim(),
+        add: function(req, res, next) {
+            var title = req.body.title.toString().trim(),
+                desc = req.body.desc.toString().trim(),
+                author = req.body.author.toString().trim(),
                 bookPress = req.body.bookPress.toString().trim(),
-                bookReleaseDate = req.body.bookReleaseDate.toString().trim(),
+                releaseDate = req.body.releaseDate.toString().trim(),
                 resJson = {
                     code: 400,
                     msg: 'example',
                     bookInfo: {
-                        title: bookTitle,
-                        desc: bookDesc,
-                        author: bookAuthor,
+                        title: title,
+                        desc: desc,
+                        author: author,
                         press: bookPress,
-                        releaseDate: bookReleaseDate
+                        releaseDate: releaseDate
                     }
                 }
 
-            Book.getBookByTitle(bookTitle, function(err, books) {
+            Book.getBookByTitle(title, function(err, books) {
                 if (err) {
                     return next(err)
                 }
@@ -56,11 +56,11 @@ var Book = require('../dao').Book,
                     return res.json(resJson)
                 }
                 var newBook = {
-                    title: bookTitle,
-                    desc: bookDesc,
-                    author: bookAuthor,
+                    title: title,
+                    desc: desc,
+                    author: author,
                     press: bookPress,
-                    releaseDate: bookReleaseDate
+                    releaseDate: releaseDate
                 }
                 Book.saveNewBook(newBook, function(err) {
                     if (err) {
@@ -72,45 +72,41 @@ var Book = require('../dao').Book,
                 })
             })
         },
-        updateBook: function(req, res, next) {
+        update: function(req, res, next) {
             var bookId = req.params.bookId,
-                bookTitle = req.body.bookTitle.toString().trim(),
-                bookDesc = req.body.bookDesc.toString().trim(),
-                bookAuthor = req.body.bookAuthor.toString().trim(),
-                bookPress = req.body.bookPress.toString().trim(),
-                bookReleaseDate = req.body.bookReleaseDate.toString().trim(),
+                title = req.body.title.toString().trim(),
+                desc = req.body.desc.toString().trim(),
+                imgUrl = req.body.imgUrl.toString().trim(),
+                author = req.body.author.toString().trim(),
+                press = req.body.press.toString().trim(),
+                releaseDate = req.body.releaseDate.toString().trim(),
                 resJson = {
                     code: 400,
                     msg: 'example',
                     bookInfo: {
-                        title: bookTitle,
-                        desc: bookDesc,
-                        author: bookAuthor,
-                        press: bookPress,
-                        releaseDate: bookReleaseDate
+                        title: title,
+                        desc: desc,
+                        imgUrl: imgUrl,
+                        author: author,
+                        press: press,
+                        releaseDate: releaseDate
                     }
                 },
                 updateBook = {
-                    title: bookTitle,
-                    desc: bookDesc,
-                    author: bookAuthor,
-                    press: bookPress,
-                    releaseDate: bookReleaseDate
+                    title: title,
+                    desc: desc,
+                    author: author,
+                    imgUrl: imgUrl,
+                    press: press,
+                    releaseDate: releaseDate
                 }
-            Book.getBookByTitle(bookTitle, function(err, books) {
+            Book.getBookByTitle(title, function(err, books) {
                 if (err) {
                     return next(err)
                 }
                 if (books.length > 0) {
                     resJson.msg = "同样书名已被添加！"
                     return res.json(resJson)
-                }
-                var newBook = {
-                    title: bookTitle,
-                    desc: bookDesc,
-                    author: bookAuthor,
-                    press: bookPress,
-                    releaseDate: bookReleaseDate
                 }
                 Book.updateBookById(bookId, updateBook, function(err, book) {
                     if (err) {
@@ -122,8 +118,9 @@ var Book = require('../dao').Book,
                 })
             })
         },
-        removeBook: function(req, res, next) {
+        remove: function(req, res, next) {
             var bookId = req.params.bookId
+            console.log(bookId)
             Book.removeBookById(bookId, function(err, book) {
                 if (err) {
                     return next(err)
