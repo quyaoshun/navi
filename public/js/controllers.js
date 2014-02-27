@@ -83,26 +83,31 @@ naviControllers.controller('BookDetailCtrl', [
 ])
 
 naviControllers.controller('ModalInstanceCtrl', [
-    '$scope', 'Book', '$modalInstance', 'book',
-    function($scope, Book, $modalInstance, book) {
+    '$scope', 'Book', '$modalInstance', 'book','$location',
+    function($scope, Book, $modalInstance, book, $location) {
         $scope.book = book
-        $scope.ok = function() {
-            $modalInstance.close($scope.book)
+        $scope.add = function() {
+            $scope.book = book
+            Book.save(book)
+            $modalInstance.close(book)
         }
         $scope.cancel = function() {
             $modalInstance.dismiss('cancel')
         }
         $scope.update = function() {
-            $modalInstance.close($scope.book)
+            $scope.book = book
+            $modalInstance.close(book)
             Book.update({
                 bookId: $scope.book._id
-            }, $scope.book)
-            console.log($scope.book)
+            }, book)
         }
         $scope.remove = function() {
-            var removeBook = new Book(book)
-            removebook.remove()
-            $modalInstance.close($scope.book)
+            Book.remove({}, {
+                bookId: $scope.book._id
+            }, function(){
+                $modalInstance.close($scope.book)
+                $location.path('/books')
+            })
         }
     }
 ])

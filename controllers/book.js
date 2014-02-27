@@ -30,19 +30,20 @@ var Book = require('../dao').Book,
             })
         },
         add: function(req, res, next) {
+            console.log(req.body)
             var title = req.body.title.toString().trim(),
                 desc = req.body.desc.toString().trim(),
                 author = req.body.author.toString().trim(),
-                bookPress = req.body.bookPress.toString().trim(),
+                press = req.body.press.toString().trim(),
                 releaseDate = req.body.releaseDate.toString().trim(),
                 resJson = {
                     code: 400,
                     msg: 'example',
-                    bookInfo: {
+                    book: {
                         title: title,
                         desc: desc,
                         author: author,
-                        press: bookPress,
+                        press: press,
                         releaseDate: releaseDate
                     }
                 }
@@ -59,7 +60,7 @@ var Book = require('../dao').Book,
                     title: title,
                     desc: desc,
                     author: author,
-                    press: bookPress,
+                    press: press,
                     releaseDate: releaseDate
                 }
                 Book.saveNewBook(newBook, function(err) {
@@ -83,7 +84,7 @@ var Book = require('../dao').Book,
                 resJson = {
                     code: 400,
                     msg: 'example',
-                    bookInfo: {
+                    book: {
                         title: title,
                         desc: desc,
                         imgUrl: imgUrl,
@@ -112,7 +113,7 @@ var Book = require('../dao').Book,
                     if (err) {
                         return next(err)
                     }
-                    resJson["bookInfo"] = book
+                    resJson["book"] = book
                     return res.json(resJson)
                     next()
                 })
